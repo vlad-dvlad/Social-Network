@@ -1,13 +1,48 @@
 .header {
-    width: 100%;
-    height: 75px;
-    background-color: aqua;
-    
-    &__logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
 
+    width: 100%;
+    height: 90px;
+    background-color:#d13129; // main color(header, nav)
+    
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 78px;
+        height: 78px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin: 5px 0px 5px 20px;
+    }
+
+    &__logo img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 75px;
+        height: 75px;
     }
 
     &__title {
-
+        margin-left: 20px;
+        font-size: 30px;
+        line-height: 32px;
+        text-transform: uppercase;
+        font-family: 'Poppins', sans-serif;
+        a {
+            color: #fff;
+        }
+        
+        font-weight: 700;
     }
 }
