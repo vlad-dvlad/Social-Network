@@ -1,9 +1,10 @@
 .main {
     overflow: auto;
     flex: 1 1 auto;
-    background-color: blueviolet;
+
 
     &__container {
         padding-top: 90px;
+        display: flex;
     }
 }

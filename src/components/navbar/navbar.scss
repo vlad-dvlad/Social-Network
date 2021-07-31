@@ -1,0 +1,31 @@
+.navbar {
+    background-color:#b32820;
+    flex: 0 0 15%;
+    min-height: 100%;
+    
+    &__container {
+        padding: 50px 30px 0px 25px;
+    }
+
+    &__list {
+
+    }
+}
+
+.list {
+
+    li {
+        margin: 0px 0px 30px 0px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 22px;
+        text-transform: uppercase;
+
+        a {
+            color: #eee
+        }
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
