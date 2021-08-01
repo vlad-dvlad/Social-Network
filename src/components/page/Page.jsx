@@ -1,9 +1,9 @@
 import React from 'react';
-import './page.scss';
+import classes from './page.module.scss';
 
 const Page = () => {
     return (
-        <div className="page page__container">
+        <div className={`${classes.page} ${classes.page__container}`}>
 
         </div>
     );

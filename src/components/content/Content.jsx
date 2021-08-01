@@ -1,11 +1,11 @@
 import React from 'react';
 import Navbar from '../navbar/Navbar';
 import Page from '../page/Page';
-import './content.scss'
+import classes from './content.module.scss'
 
 const Content = () => {
     return (
-        <main className="main main__container">
+        <main className={`${classes.main} ${classes.main__container}`}>
             <Navbar />
             <Page />
         </main>
