@@ -1,7 +1,8 @@
 import React from 'react';
-import MyPosts from './MyPosts/Posts/MyPosts';
 import classes from './profile.module.scss';
+import MyPosts from './myPosts/MyPosts';
 import bg from './../../assets/img/bg.jpg';
+
 
 const Profile = () => {
     return (
@@ -17,10 +18,7 @@ const Profile = () => {
                     Description
                 </div>
             </div>
-            <div>My post</div>
-            <div>New post</div>
             <MyPosts />
-            <div>post 2</div>
         </div>
     );
 }
