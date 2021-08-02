@@ -8,4 +8,16 @@
         border: 1px solid #000;
         
     }
+
+    &__items {
+
+    }
+
+    &__item {
+        margin: 0px 0px 25px 0px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }

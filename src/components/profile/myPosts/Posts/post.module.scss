@@ -1,11 +1,55 @@
 .post {
+    
+    &__container {
+        display: flex;
+        flex-direction: column;
 
-    &__image img {
+        width: 450px;
+        padding: 10px;
+        border: 1px solid rgb(182, 182, 182);
+        background-color: rgb(247, 247, 247);
+        border-radius: 5px;
+    }
+
+    &__body {
+        width: 100%;
+        display: flex;
+        align-items: start;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #b2b8b8;
+    }
+
+
+    &__image {
+        margin-right: 15px;
         width: 50px;
+        height: 50px;
+       
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #ebc1bf;
+        }
+        
     }
 
     &__text {
-        border: 1px solid #000;
+        padding-top: 10px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 16px;
+        line-height: 18px;
         
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__like {
+        margin: 5px 10px 0px 0px;
+
     }
 }
