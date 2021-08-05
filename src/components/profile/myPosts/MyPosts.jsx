@@ -19,7 +19,6 @@ const MyPosts = () => {
              
              
             <div>New post</div>
-            
         </div>
     );
 }

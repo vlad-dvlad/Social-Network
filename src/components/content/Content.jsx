@@ -8,8 +8,8 @@ const Content = () => {
     return (
         <main className={`${classes.main} ${classes.main__container}`}>
             <Navbar />
-            {/* <Profile /> */}
-            <Dialogs />
+            <Profile />
+            {/* <Dialogs /> */}
         </main>
         
     );
