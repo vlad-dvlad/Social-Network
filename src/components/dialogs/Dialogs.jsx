@@ -7,6 +7,19 @@ const Dialogs = (props) => {
             <div>
                 Dialogs
             </div>
+            <div>
+                Dialogs
+            </div>
+            <div>
+                Dialogs
+            </div>
+            <div>
+                Dialogs
+            </div>
+            <div>
+                Dialogs
+            </div>
+
         </div>
     );
 }
