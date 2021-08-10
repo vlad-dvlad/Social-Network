@@ -10,7 +10,8 @@ function App(props) {
         <BrowserRouter>
             <div className="wrapper">
                 <Header/>
-                <Content posts={props.posts} dialogs={props.dialogs} messages={props.messages}/>
+                <Content profileState={props.appState.profilePage}
+                         dialogsState={props.appState.dialogsPage}/>
                 <Footer/>
             </div>
         </BrowserRouter>
