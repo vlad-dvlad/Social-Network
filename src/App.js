@@ -5,12 +5,12 @@ import Header from './components/header/Header';
 import {BrowserRouter} from "react-router-dom";
 
 
-function App() {
+function App(props) {
     return (
         <BrowserRouter>
             <div className="wrapper">
                 <Header/>
-                <Content/>
+                <Content posts={props.posts} dialogs={props.dialogs} messages={props.messages}/>
                 <Footer/>
             </div>
         </BrowserRouter>

@@ -3,17 +3,17 @@ import Dialogs from '../dialogs/Dialogs';
 import Navbar from '../navbar/Navbar';
 import Profile from '../profile/Profile';
 import classes from './content.module.scss'
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import News from "../news/News";
 import Music from "../music/Music";
 import Settings from "../settings/Settings";
 
-const Content = () => {
+const Content = (props) => {
     return (
         <main className={`${classes.main} ${classes.main__container}`}>
             <Navbar/>
-            <Route path="/profile" component={Profile}/>
-            <Route path="/dialogs" component={Dialogs}/>
+            <Route path="/profile" render={ () => <Profile posts={props.posts}/>}/>
+            <Route path="/dialogs" render={ () => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
             <Route path="/settings" component={Settings} />

@@ -2,24 +2,18 @@ import React from 'react';
 import classes from './profile.module.scss';
 import MyPosts from './myPosts/MyPosts';
 import bg from './../../assets/img/bg.jpg';
+import ProfileInfo from "./profileInfo/ProfileInfo";
 
 
-const Profile = () => {
+const Profile = (props) => {
+
+
+
     return (
         <div className={classes.profile}>
             <div className={classes.profile__container}>
-                <div className="profile__header">
-                    <img src={bg} alt="" />
-                </div>
-                <div className="profile__info">
-                    <div className="profile__ava">
-                        Ava
-                    </div>
-                    <div className="profile__description">
-                        Description
-                    </div>
-                </div>
-                <MyPosts />
+                <ProfileInfo />
+                <MyPosts posts={props.posts}/>
             </div>
         </div>
     );
