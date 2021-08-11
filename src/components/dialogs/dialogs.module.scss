@@ -7,16 +7,23 @@
         display: flex;
         width: 100%;
         height: 100%;
-        background-color: #e7e6e6;
+
+        overflow: auto;
     }
 
     &__items {
         flex: 1 1 20%;
+        background-color: #fff;
+        border: 1px solid #d5d5d5;
 
-        border-right: 1px solid #8a8888;
     }
 
     &__dialog {
+        display: flex;
+        width: 100%;
+        height: 70px;
+        padding: 10px 0px 0px 5px;
+
 
     }
 
@@ -26,6 +33,9 @@
 
     &__messages {
         flex: 1 1 80%;
+        padding: 15px;
+        background: rgb(226,226,226);
+        background: linear-gradient(110deg, rgba(226,226,226,1) 11%, rgba(232,230,230,1) 49%, rgba(227,192,205,1) 89%);
 
     }
 
@@ -33,10 +43,33 @@
 
 .person{
     &__avatar {
+        width: 50px;
+        height: 50px;
 
+        margin-right: 10px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #ebc1bf;
+            object-fit: cover;
+            object-position: center left;
+        }
     }
 
     &__name {
+        padding-top: 10px;
+    }
 
+    &__text {
+        color: #000;
+        font-family: 'Nunito', sans-serif;
+        font-size: 16px;
+        line-height: 18px;
+
+        &:current {
+            color: #000;
+        }
     }
 }
