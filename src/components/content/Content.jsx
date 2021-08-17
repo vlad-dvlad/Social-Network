@@ -12,7 +12,7 @@ const Content = (props) => {
     return (
         <main className={`${classes.main} ${classes.main__container}`}>
             <Navbar/>
-            <Route path="/profile" render={ () => <Profile state={props.profileState}/>}/>
+            <Route path="/profile" render={ () => <Profile state={props.profileState} addPost={props.addPost}/>}/>
             <Route path="/dialogs" render={ () => <Dialogs state={props.dialogsState}/>}/>
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
