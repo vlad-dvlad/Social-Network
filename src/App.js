@@ -3,7 +3,6 @@ import Content from './components/content/Content';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import {BrowserRouter} from "react-router-dom";
-import state from "./redux/state";
 
 
 function App(props) {
@@ -13,7 +12,8 @@ function App(props) {
                 <Header/>
                 <Content profileState={props.appState.profilePage}
                          dialogsState={props.appState.dialogsPage}
-                         addPost={props.addPost}/>
+                         addPost={props.addPost}
+                         updateNewPostText={props.updateNewPostText}/>
                 <Footer/>
             </div>
         </BrowserRouter>
