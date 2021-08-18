@@ -6,14 +6,19 @@ const MessageCreate = (props) => {
     let newMessage = React.createRef();
 
     const sendMessage = () => {
+        props.sendMessage();
+    }
+
+    const inputMessage = () => {
         let message = newMessage.current.value;
-        alert(message)
+        props.inputMessage(message);
     }
 
     return(
         <div className={`${classes.messages} ${classes.messages__container}`}>
             <div className={classes.messages__create}>
-                <textarea className={classes.messages__text} ref={newMessage}></textarea>
+                <textarea onChange={inputMessage} className={classes.messages__text}
+                          ref={newMessage} value={props.newMessageText}/>
                 <button className={classes.messages__send} onClick={sendMessage}>Send</button>
             </div>
         </div>

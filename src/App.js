@@ -10,10 +10,15 @@ function App(props) {
         <BrowserRouter>
             <div className="wrapper">
                 <Header/>
-                <Content profileState={props.appState.profilePage}
-                         dialogsState={props.appState.dialogsPage}
-                         addPost={props.addPost}
-                         updateNewPostText={props.updateNewPostText}/>
+                <Content
+                    profileState={props.appState.profilePage}
+                    addPost={props.addPost}
+                    updateNewPostText={props.updateNewPostText} // profile
+
+                    dialogsState={props.appState.dialogsPage}
+                    sendMessage={props.sendMessage}
+                    inputMessage={props.inputMessage} // dialogs
+                />
                 <Footer/>
             </div>
         </BrowserRouter>
