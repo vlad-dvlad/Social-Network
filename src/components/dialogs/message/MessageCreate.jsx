@@ -1,25 +1,19 @@
 import React from 'react';
 import classes from '../dialogs.module.scss';
+import {inputMessageActionCreator, sendMessageActionCreator} from "../../../redux/state";
 
 const MessageCreate = (props) => {
 
     let newMessage = React.createRef();
 
     const sendMessage = () => {
-        let action = {
-            type: 'SEND-MESSAGE'
-        }
-        props.dispatch(action);
+        props.dispatch(sendMessageActionCreator());
     }
 
     const inputMessage = () => {
         let message = newMessage.current.value;
-        let action = {
-            type: 'INPUT-MESSAGE-TEXT',
-            newMessage: message
-        }
 
-        props.dispatch(action);
+        props.dispatch(inputMessageActionCreator(message));
     }
 
     return(
