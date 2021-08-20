@@ -66,7 +66,6 @@ let store = {
     },
 
     dispatch(action) {
-        debugger;
         if(action.type === 'ADD-POST') {
             let newPost = {
                 id: 5,

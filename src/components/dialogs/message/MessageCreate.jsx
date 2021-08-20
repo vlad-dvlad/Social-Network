@@ -6,12 +6,20 @@ const MessageCreate = (props) => {
     let newMessage = React.createRef();
 
     const sendMessage = () => {
-        props.sendMessage();
+        let action = {
+            type: 'SEND-MESSAGE'
+        }
+        props.dispatch(action);
     }
 
     const inputMessage = () => {
         let message = newMessage.current.value;
-        props.inputMessage(message);
+        let action = {
+            type: 'INPUT-MESSAGE-TEXT',
+            newMessage: message
+        }
+
+        props.dispatch(action);
     }
 
     return(

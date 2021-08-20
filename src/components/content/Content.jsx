@@ -16,9 +16,7 @@ const Content = (props) => {
                    render={ () => <Profile state={props.profileState} dispatch={props.dispatch}/> }/>
 
             <Route path="/dialogs"
-                   render={ () => <Dialogs state={props.dialogsState}
-                                           sendMessage={props.sendMessage}
-                                           inputMessage={props.inputMessage}/>}/>
+                   render={ () => <Dialogs state={props.dialogsState} dispatch={props.dispatch}/>}/>
 
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />

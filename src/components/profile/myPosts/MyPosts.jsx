@@ -17,21 +17,22 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     const addPost = () => {
-        debugger
-        props.dispatch({
+        let action = {
             type: 'ADD-POST'
-        });
+        };
+
+        props.dispatch(action)
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-
-        props.dispatch({
+        let action = {
             type: 'UPDATE-NEW-POST-TEXT',
             newText: text
-        });
-    }
+        };
 
+        props.dispatch(action);
+    }
 
     return(
         <div className={`${classes.posts} ${classes.posts__container}`}>
