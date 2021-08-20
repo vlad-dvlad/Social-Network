@@ -11,13 +11,9 @@ function App(props) {
             <div className="wrapper">
                 <Header/>
                 <Content
-                    profileState={props.appState.profilePage}
-                    addPost={props.addPost}
-                    updateNewPostText={props.updateNewPostText} // profile
-
-                    dialogsState={props.appState.dialogsPage}
-                    sendMessage={props.sendMessage}
-                    inputMessage={props.inputMessage} // dialogs
+                    profileState={props.appState.profilePage}   // profile
+                    dialogsState={props.appState.dialogsPage}   // dialogs
+                    dispatch={props.dispatch}
                 />
                 <Footer/>
             </div>

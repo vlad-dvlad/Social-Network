@@ -13,9 +13,7 @@ const Content = (props) => {
         <main className={`${classes.main} ${classes.main__container}`}>
             <Navbar/>
             <Route path="/profile"
-                   render={ () => <Profile state={props.profileState}
-                                           addPost={props.addPost}
-                                           updateNewPostText={props.updateNewPostText}/> }/>
+                   render={ () => <Profile state={props.profileState} dispatch={props.dispatch}/> }/>
 
             <Route path="/dialogs"
                    render={ () => <Dialogs state={props.dialogsState}
