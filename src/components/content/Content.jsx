@@ -15,10 +15,12 @@ const Content = (props) => {
         <main className={`${classes.main} ${classes.main__container}`}>
             <Navbar/>
             <Route path="/profile"
-                   render={ () => <Profile store={props.store}/> }/>
+                   render={ () => <Profile /*store={props.store}*/
+                   /> }/>
 
             <Route path="/dialogs"
-                   render={ () => <DialogsContainer store={props.store}/>}/>
+                   render={ () => <DialogsContainer /*store={props.store}*/
+                   />}/>
 
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />

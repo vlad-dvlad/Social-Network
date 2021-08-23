@@ -3,17 +3,17 @@ import classes from './dialogs.module.scss';
 import DialogItem from "./dialogItem/DialogItem";
 import Message from "./message/Message";
 
-import DialogsContainer from "./DialogsContainer";
+
 
 const Dialogs = (props) => {
 
-
-    let dialogsElement = props.dialogState.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-    let messagesElements = props.dialogState.messages.map(m => <Message message={m.message}/>);
+    let dialogsElement = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
+    let messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message}/>);
 
     let newMessage = React.createRef();
 
     const onSendMessage = () => {
+        debugger;
         props.sendMessage();
     }
 

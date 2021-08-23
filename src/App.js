@@ -12,7 +12,7 @@ function App(props) {
                 // profileState={props.appState.profilePage}   // profile
                 // dialogsState={props.appState.dialogsPage}   // dialogs
                 // dispatch={props.dispatch}
-                store={props.appStore}
+                // store={props.appStore}
             />
             <Footer/>
         </div>
