@@ -9,9 +9,10 @@ function App(props) {
         <div className="wrapper">
             <Header/>
             <Content
-                profileState={props.appState.profilePage}   // profile
-                dialogsState={props.appState.dialogsPage}   // dialogs
-                dispatch={props.dispatch}
+                // profileState={props.appState.profilePage}   // profile
+                // dialogsState={props.appState.dialogsPage}   // dialogs
+                // dispatch={props.dispatch}
+                store={props.appStore}
             />
             <Footer/>
         </div>
