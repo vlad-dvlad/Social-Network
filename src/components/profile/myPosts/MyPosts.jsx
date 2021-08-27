@@ -7,7 +7,7 @@ const MyPosts = (props) => {
     let postsElement = props.posts.map(p => {
         return (
             <div className={classes.posts__item}>
-                <Post message={p.message} likeCount={p.likesCount}/>
+                <Post message={p.message} likeCount={p.likesCount} key={p.id}/>
             </div>
         );
     });
