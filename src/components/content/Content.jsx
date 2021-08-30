@@ -8,6 +8,7 @@ import News from "../news/News";
 import Music from "../music/Music";
 import Settings from "../settings/Settings";
 import DialogsContainer from "../dialogs/DialogsContainer";
+import UsersContainer from "../users/UsersContainer";
 
 
 const Content = (props) => {
@@ -24,6 +25,7 @@ const Content = (props) => {
 
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
+            <Route path="/users" component={UsersContainer}/>
             <Route path="/settings" component={Settings} />
         </main>
     );
