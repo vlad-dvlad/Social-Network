@@ -1,5 +1,4 @@
 import React from 'react';
-import Dialogs from '../dialogs/Dialogs';
 import Navbar from '../navbar/Navbar';
 import Profile from '../profile/Profile';
 import classes from './content.module.scss'
@@ -25,7 +24,7 @@ const Content = (props) => {
 
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
-            <Route path="/users" component={UsersContainer}/>
+            <Route path="/users" render={() => <UsersContainer/>}/>
             <Route path="/settings" component={Settings} />
         </main>
     );
