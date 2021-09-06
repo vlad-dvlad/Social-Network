@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../navbar/Navbar';
-import Profile from '../profile/Profile';
 import classes from './content.module.scss'
 import {Route} from "react-router-dom";
 import News from "../news/News";
@@ -8,6 +7,7 @@ import Music from "../music/Music";
 import Settings from "../settings/Settings";
 import DialogsContainer from "../dialogs/DialogsContainer";
 import UsersContainer from "../users/UsersContainer";
+import ProfileContainer from "../profile/ProfileContainer";
 
 
 const Content = (props) => {
@@ -15,7 +15,7 @@ const Content = (props) => {
         <main className={`${classes.main} ${classes.main__container}`}>
             <Navbar/>
             <Route path="/profile"
-                   render={ () => <Profile /*store={props.store}*/
+                   render={ () => <ProfileContainer /*store={props.store}*/
                    /> }/>
 
             <Route path="/dialogs"

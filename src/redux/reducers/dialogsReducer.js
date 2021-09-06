@@ -37,10 +37,9 @@ const dialogsReducer = (state = initialState, action) => {
     }
 }
 
-export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
+export const sendMessage = () => ({type: SEND_MESSAGE})
 
-export const inputMessageActionCreator = (message) =>
-    ({type: INPUT_MESSAGE_TEXT, newMessage: message})
+export const inputMessage = (message) => ({type: INPUT_MESSAGE_TEXT, newMessage: message})
 
 
 export default dialogsReducer;

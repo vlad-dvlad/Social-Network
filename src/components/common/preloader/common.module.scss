@@ -1,0 +1,13 @@
+.common {
+  &__loader {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    img {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
