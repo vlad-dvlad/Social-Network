@@ -14,7 +14,7 @@ const Content = (props) => {
     return (
         <main className={`${classes.main} ${classes.main__container}`}>
             <Navbar/>
-            <Route path="/profile"
+            <Route path="/profile/:userId?"
                    render={ () => <ProfileContainer /*store={props.store}*/
                    /> }/>
 

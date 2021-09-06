@@ -10,6 +10,8 @@ const ProfileInfo = (props) => {
         return <Preloader />;
     }
 
+    let contacts = props.profile.contacts;
+
     return (
         <div className={classes.profile__main}>
             <div className={classes.profile__header}>
@@ -21,6 +23,13 @@ const ProfileInfo = (props) => {
                 </div>
                 <div className={classes.profile__description}>
                     Description
+                    <div>{props.profile.fullName}</div>
+                    <div>{props.profile.aboutMe}</div>
+                    <div>
+                        {
+                            Object.keys(contacts).map(k => <div>{k} : {contacts[k]}</div>)
+                        }
+                    </div>
                 </div>
             </div>
         </div>
