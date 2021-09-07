@@ -13,7 +13,6 @@ class ProfileContainer extends React.Component {
         let userId = this.props.match.params.userId;
 
         if(userId == null) userId = 2;
-        debugger
         axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
             .then(response => {
                 this.props.setUserProfile(response.data);
@@ -21,7 +20,6 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
-        debugger
         return (
             <Profile {...this.props} profile={this.props.profile}/>
         );
