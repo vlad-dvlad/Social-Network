@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./users.module.scss";
 import userPhoto from "../../assets/img/cat.png";
 import {NavLink} from "react-router-dom";
-import axios from "axios";
+import {userAPI} from "../../api/userAPI";
 
 
 
@@ -15,30 +15,15 @@ const Users = (props) => {
     }
 
     const followUser = (id) => {
-        debugger;
-        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`,
-            {}, {
-                withCredentials: true,
-                headers: {
-                    'API-KEY': 'c44afb3b-3190-4267-a47c-ee639a0d16bd'
-                }
-            })
-            .then(response => {
-                if(response.data.statusCode === 0){
+        userAPI.followUser(id).then(response => {
+                if(response.statusCode === 0){
                     props.follow(id);
                 }
             });
     }
 
     const unfollowUser = (id) => {
-        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`,
-            {
-                withCredentials: true,
-                headers: {
-                    'API-KEY': 'c44afb3b-3190-4267-a47c-ee639a0d16bd'
-                }
-            })
-            .then(response => {
+        userAPI.unfollowUser(id).then(response => {
                 if(response.data.statusCode === 0){
                     props.unFollow(id);
                 }
