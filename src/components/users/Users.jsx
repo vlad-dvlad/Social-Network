@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./users.module.scss";
 import userPhoto from "../../assets/img/cat.png";
 import {NavLink} from "react-router-dom";
+import axios from "axios";
 
 
 
@@ -11,6 +12,37 @@ const Users = (props) => {
     let pages = [];
     for (let i = 1; i <= pageCount; i++) {
         pages.push(i);
+    }
+
+    const followUser = (id) => {
+        debugger;
+        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`,
+            {}, {
+                withCredentials: true,
+                headers: {
+                    'API-KEY': 'c44afb3b-3190-4267-a47c-ee639a0d16bd'
+                }
+            })
+            .then(response => {
+                if(response.data.statusCode === 0){
+                    props.follow(id);
+                }
+            });
+    }
+
+    const unfollowUser = (id) => {
+        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`,
+            {
+                withCredentials: true,
+                headers: {
+                    'API-KEY': 'c44afb3b-3190-4267-a47c-ee639a0d16bd'
+                }
+            })
+            .then(response => {
+                if(response.data.statusCode === 0){
+                    props.unFollow(id);
+                }
+            });
     }
 
 
@@ -28,8 +60,9 @@ const Users = (props) => {
                             <div>
                                 {
                                     u.followed
-                                        ? <button onClick={() => { props.unFollow(u.id) } } className={classes.user__btn}>Unfollow</button>
-                                        : <button onClick={() => { props.follow(u.id) } } className={classes.user__btn}>Follow</button>
+                                        ? <button onClick={() => {unfollowUser(u.id)} } className={classes.user__btn}>Unfollow</button>
+
+                                        : <button onClick={() => {followUser(u.id)} } className={classes.user__btn}>Follow</button>
                                 }
                             </div>
                         </div>
