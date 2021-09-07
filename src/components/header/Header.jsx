@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './header.module.scss';
 import {NavLink} from "react-router-dom";
+import userPhoto from "../../assets/img/cat.png";
 
 
 const Header = (props) => {
@@ -20,7 +21,9 @@ const Header = (props) => {
                     {
                         props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>
                     }
-
+                </div>
+                <div className={classes.header__photo}>
+                    <img src={props.imgUrl != null ? props.imgUrl : userPhoto} alt=""/>
                 </div>
             </div>
             

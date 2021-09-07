@@ -14,10 +14,15 @@ class HeaderContainer extends React.Component {
             withCredentials: true
         })
             .then(response => {
-                debugger;
+                let imgUrl;
                 if(response.data.resultCode === 0) {
                     const {id, email, login} = response.data.data;
-                    this.props.setAuthUserData(id, email, login);
+                    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${id}`)
+                        .then(response => {
+                            imgUrl = response.data.photos.small;
+                        })
+
+                    this.props.setAuthUserData(id, email, login, imgUrl);
                 }
             });
     }
@@ -33,6 +38,7 @@ const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
         login: state.auth.login,
+        imgUrl: state.auth.imgUrl,
     }
 }
 
