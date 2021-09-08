@@ -9,7 +9,6 @@ export const userAPI = {
     },
 
     followUser (id) {
-        debugger
         return instance.post(`follow/${id}`)
             .then(response => response.data);
     },

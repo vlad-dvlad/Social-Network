@@ -15,23 +15,22 @@ const Users = (props) => {
     }
 
     const followUser = (id) => {
-        debugger
-        props.toggleIsFollowingProgress(true);
+        props.toggleIsFollowingProgress(true, id);
         userAPI.followUser(id).then(response => {
                 if(response.resultCode === 0){
                     props.follow(id);
                 }
-                props.toggleIsFollowingProgress(false);
+                props.toggleIsFollowingProgress(false, id);
             });
     }
 
     const unfollowUser = (id) => {
-        props.toggleIsFollowingProgress(true);
+        props.toggleIsFollowingProgress(true, id);
         userAPI.unfollowUser(id).then(response => {
                 if(response.resultCode === 0){
                     props.unFollow(id);
                 }
-                props.toggleIsFollowingProgress(false);
+                props.toggleIsFollowingProgress(false, id);
             });
     }
 
@@ -50,9 +49,9 @@ const Users = (props) => {
                             <div>
                                 {
                                     u.followed
-                                        ? <button disabled={props.followingInProgress} onClick={() => {unfollowUser(u.id)} } className={classes.user__btn}>Unfollow</button>
+                                        ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {unfollowUser(u.id)} } className={classes.user__btn}>Unfollow</button>
 
-                                        : <button disabled={props.followingInProgress} onClick={() => {followUser(u.id)} } className={classes.user__btn}>Follow</button>
+                                        : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {followUser(u.id)} } className={classes.user__btn}>Follow</button>
                                 }
                             </div>
                         </div>
