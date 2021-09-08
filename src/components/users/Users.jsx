@@ -15,18 +15,23 @@ const Users = (props) => {
     }
 
     const followUser = (id) => {
+        debugger
+        props.toggleIsFollowingProgress(true);
         userAPI.followUser(id).then(response => {
-                if(response.statusCode === 0){
+                if(response.resultCode === 0){
                     props.follow(id);
                 }
+                props.toggleIsFollowingProgress(false);
             });
     }
 
     const unfollowUser = (id) => {
+        props.toggleIsFollowingProgress(true);
         userAPI.unfollowUser(id).then(response => {
-                if(response.data.statusCode === 0){
+                if(response.resultCode === 0){
                     props.unFollow(id);
                 }
+                props.toggleIsFollowingProgress(false);
             });
     }
 
@@ -45,9 +50,9 @@ const Users = (props) => {
                             <div>
                                 {
                                     u.followed
-                                        ? <button onClick={() => {unfollowUser(u.id)} } className={classes.user__btn}>Unfollow</button>
+                                        ? <button disabled={props.followingInProgress} onClick={() => {unfollowUser(u.id)} } className={classes.user__btn}>Unfollow</button>
 
-                                        : <button onClick={() => {followUser(u.id)} } className={classes.user__btn}>Follow</button>
+                                        : <button disabled={props.followingInProgress} onClick={() => {followUser(u.id)} } className={classes.user__btn}>Follow</button>
                                 }
                             </div>
                         </div>
@@ -67,7 +72,7 @@ const Users = (props) => {
             <div className={`${classes.page} ${classes.page__container}`}>
                 {pages.map(p => {
                     return <span className={props.currentPage === p && classes.page__selected}
-                                 onClick={() => {props.onPageChanged(p)}}>{p}</span>;
+                                 onClick={() => {props.onPageChanged(p)}} key={p}>{p}</span>;
                 })
                 }
             </div>
