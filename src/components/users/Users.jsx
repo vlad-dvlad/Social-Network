@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./users.module.scss";
 import userPhoto from "../../assets/img/cat.png";
 import {NavLink} from "react-router-dom";
-import {userAPI} from "../../api/userAPI";
+
 
 
 
@@ -15,23 +15,11 @@ const Users = (props) => {
     }
 
     const followUser = (id) => {
-        props.toggleIsFollowingProgress(true, id);
-        userAPI.followUser(id).then(response => {
-                if(response.resultCode === 0){
-                    props.follow(id);
-                }
-                props.toggleIsFollowingProgress(false, id);
-            });
+        props.followUsers(id);
     }
 
     const unfollowUser = (id) => {
-        props.toggleIsFollowingProgress(true, id);
-        userAPI.unfollowUser(id).then(response => {
-                if(response.resultCode === 0){
-                    props.unFollow(id);
-                }
-                props.toggleIsFollowingProgress(false, id);
-            });
+        props.unFollowUsers(id);
     }
 
 
@@ -49,9 +37,11 @@ const Users = (props) => {
                             <div>
                                 {
                                     u.followed
-                                        ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {unfollowUser(u.id)} } className={classes.user__btn}>Unfollow</button>
+                                        ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {unfollowUser(u.id)} }
+                                                  className={classes.user__btn}>Unfollow</button>
 
-                                        : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {followUser(u.id)} } className={classes.user__btn}>Follow</button>
+                                        : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {followUser(u.id)} }
+                                                  className={classes.user__btn}>Follow</button>
                                 }
                             </div>
                         </div>
