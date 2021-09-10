@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './dialogs.module.scss';
 import DialogItem from "./dialogItem/DialogItem";
 import Message from "./message/Message";
+import {Redirect} from "react-router-dom";
 
 
 
@@ -13,8 +14,11 @@ const Dialogs = (props) => {
     let newMessage = React.createRef();
 
     const onSendMessage = () => {
-        debugger;
         props.sendMessage();
+    }
+
+    if(!props.isAuth) {
+        return <Redirect to={'/login'}/>
     }
 
     const onInputMessage = () => {

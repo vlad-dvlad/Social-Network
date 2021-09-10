@@ -8,6 +8,7 @@ import Settings from "../settings/Settings";
 import DialogsContainer from "../dialogs/DialogsContainer";
 import UsersContainer from "../users/UsersContainer";
 import ProfileContainer from "../profile/ProfileContainer";
+import Login from "../login/Login";
 
 
 const Content = (props) => {
@@ -25,6 +26,7 @@ const Content = (props) => {
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
             <Route path="/users" render={() => <UsersContainer/>}/>
+            <Route path="/login" component={Login} />
             <Route path="/settings" component={Settings} />
         </main>
     );

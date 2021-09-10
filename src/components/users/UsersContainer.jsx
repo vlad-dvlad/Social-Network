@@ -7,6 +7,8 @@ import {
 } from "../../redux/reducers/usersReducer";
 import Users from "./Users";
 import Preloader from "../common/preloader/Preloader";
+import {compose} from "redux";
+import {withAuthRedirect} from "../../hoc/WithAuthRedirect";
 
 
 
@@ -46,10 +48,17 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps, {
-    followUsers,
-    unFollowUsers,
-    setPage,
-    toggleIsFollowingProgress,
-    getUsers,
-})(UsersContainer);
+export default compose(
+    connect(mapStateToProps, {
+        followUsers,
+        unFollowUsers,
+        setPage,
+        toggleIsFollowingProgress,
+        getUsers,
+    }),
+    withAuthRedirect
+)(UsersContainer);
+
+
+
+
