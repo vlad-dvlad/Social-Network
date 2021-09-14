@@ -2,6 +2,7 @@ import React from 'react';
 import classes from '../profile.module.scss'
 import bg from "../../../assets/img/bg.jpg";
 import Preloader from "../../common/preloader/Preloader";
+import ProfileStatus from "./ProfileStatus ";
 
 
 const ProfileInfo = (props) => {
@@ -19,17 +20,13 @@ const ProfileInfo = (props) => {
             </div>
             <div className={classes.profile__info}>
                 <div className={classes.profile__ava}>
-                    <img src={props.profile.photos.large} alt=""/>
+                    <img src={!props.profile.photos.large} alt=""/>
                 </div>
                 <div className={classes.profile__description}>
                     Description
                     <div>{props.profile.fullName}</div>
                     <div>{props.profile.aboutMe}</div>
-                    <div>
-                        {
-                            Object.keys(contacts).map(k => <div>{k} : {contacts[k]}</div>)
-                        }
-                    </div>
+                    <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                 </div>
             </div>
         </div>
