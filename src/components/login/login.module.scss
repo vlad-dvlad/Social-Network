@@ -1,7 +1,74 @@
 .login {
   width: 100%;
   flex: 1 1 85%;
+
+  &__container {
+    padding: 15px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+
+    margin-bottom: 10px;
+  }
+}
+
+.form {
+
   &__container {
 
   }
+
+  &__login {
+    margin-bottom: 10px;
+
+  }
+
+  &__password {
+    margin-bottom: 10px;
+  }
+
+  &__checkbox {
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  &__checkbox_style {
+
+  }
+
+  &__btn {
+    text-transform: uppercase;
+  }
+  &__btn_style {
+    width: 250px;
+    height: 30px;
+    background-color:#d13129;
+    border-radius: 5px;
+
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    border: 1px solid #c5baba;
+    transition-delay: 0.6s;
+
+    &:hover {
+      background-color: #af2721;
+      transition-delay: 0.4s;
+    }
+  }
+
+
+  &__style {
+    font-family: 'Poppins', sans-serif;
+    width: 250px;
+    height: 30px;
+    background-color: #eee;
+    border-radius: 5px;
+    padding-left: 5px;
+  }
+
 }

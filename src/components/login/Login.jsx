@@ -6,7 +6,7 @@ const Login = (props) => {
 
     return (
       <div className={`${classes.login} ${classes.login__container}`}>
-          <div className={"login__title"}>Login</div>
+          <div className={`${classes.login__title}`}>Welcome to Cool network!</div>
           <LoginForm />
       </div>
     );
