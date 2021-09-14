@@ -6,6 +6,7 @@
 
     width: 100%;
     height: 90px;
+
     
     background-color:#d13129; // main color(header, nav)
     
@@ -14,6 +15,13 @@
         align-items: center;
         max-width: 100%;
         padding: 0px 20px;
+        justify-content: space-between;
+    }
+
+    &__main {
+        display: flex;
+        align-items: center;
+        max-width: 100%;
     }
 
     &__logo {
@@ -53,9 +61,7 @@
         display: none;
     }
 
-    &__login {
 
-    }
 
     &__photo {
         width: 50px;
@@ -70,6 +76,50 @@
         }
     }
 }
+
+.login {
+
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__photo {
+        width: 50px;
+        height: 50px;
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #ebc1bf;
+        }
+        margin-right: 10px;
+    }
+
+    &__notfoto {
+        display: none;
+    }
+
+    &__link {
+        font-size: 22px;
+        line-height: 18px;
+        text-transform: uppercase;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        a {
+            color: #fff;
+        }
+
+        font-weight: 500;
+    }
+}
+
+
+
+
+
 
 @media (max-width: 991px) {
     .header {
@@ -137,3 +187,5 @@
     }
 
 }
+
+
