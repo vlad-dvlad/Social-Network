@@ -7,8 +7,8 @@ const LoginForm = (props) => {
     return (
         <div className={`${classes.form} ${classes.form__container}`}>
             <form onSubmit={props.handleSubmit}>
-                <div className={classes.form__login}>
-                    <Field className={classes.form__style} placeholder={"Login"} type={"text"} component={"input"} name={"login"}/>
+                <div className={classes.form__email}>
+                    <Field className={classes.form__style} placeholder={"Email"} type={"email"} component={"input"} name={"email"}/>
                 </div>
                 <div className={classes.form__password}>
                     <Field className={classes.form__style} placeholder={"Password"} type={"password"} component={"input"} name={"password"}/>

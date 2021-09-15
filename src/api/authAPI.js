@@ -9,5 +9,9 @@ export const authAPI = {
     getAuthUserAvatar(id) {
         return instance.get(`profile/${id}`)
             .then(response => response.data.photos.small);
+    },
+
+    loginUser(email, password, rememberMe, captcha) {
+        return instance.post(`/auth/login`, {email, password, rememberMe, captcha});
     }
 }

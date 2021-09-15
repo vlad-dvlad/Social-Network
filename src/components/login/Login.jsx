@@ -1,12 +1,17 @@
 import React from "react";
 import {LoginReduxForm} from "./LoginForm";
 import classes from "./login.module.scss";
-
+import {connect} from "react-redux";
+import {setLoginUser} from "../../redux/reducers/authReducer";
 
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        console.log(formData)
+        props.setLoginUser(
+            formData.email,
+            formData.password,
+            formData.checkbox,
+        )
     };
 
     return (
@@ -17,4 +22,12 @@ const Login = (props) => {
     );
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+    return {
+
+    }
+}
+
+
+
+export default connect(mapStateToProps, {setLoginUser})(Login);
