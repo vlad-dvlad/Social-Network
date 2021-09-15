@@ -1,13 +1,18 @@
 import React from "react";
-import LoginForm from "./LoginForm";
+import {LoginReduxForm} from "./LoginForm";
 import classes from "./login.module.scss";
 
+
+
 const Login = (props) => {
+    const onSubmit = (formData) => {
+        console.log(formData)
+    };
 
     return (
       <div className={`${classes.login} ${classes.login__container}`}>
           <div className={`${classes.login__title}`}>Welcome to Cool network!</div>
-          <LoginForm />
+          <LoginReduxForm onSubmit={onSubmit}/>
       </div>
     );
 }

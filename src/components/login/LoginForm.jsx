@@ -1,18 +1,20 @@
 import React from "react";
 import classes from "./login.module.scss";
+import {Field, reduxForm} from "redux-form";
 
-const LoginForm = () => {
+
+const LoginForm = (props) => {
     return (
         <div className={`${classes.form} ${classes.form__container}`}>
-            <form>
+            <form onSubmit={props.handleSubmit}>
                 <div className={classes.form__login}>
-                    <input className={classes.form__style} placeholder={"Login"} type={"text"}/>
+                    <Field className={classes.form__style} placeholder={"Login"} type={"text"} component={"input"} name={"login"}/>
                 </div>
                 <div className={classes.form__password}>
-                    <input className={classes.form__style} placeholder={"Password"} type={"password"}/>
+                    <Field className={classes.form__style} placeholder={"Password"} type={"password"} component={"input"} name={"password"}/>
                 </div>
                 <div className={classes.form__checkbox}>
-                    <input className={classes.form__checkbox_style}  type={"checkbox"}/> Remember me
+                    <Field className={classes.form__checkbox_style}  type={"checkbox"} component={"input"} name={"checkbox"}/> Remember me
                 </div>
                 <div className={classes.form__btn}>
                     <button className={classes.form__btn_style}>Login</button>
@@ -22,5 +24,7 @@ const LoginForm = () => {
 
     );
 }
+
+export const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm);
 
 export default LoginForm;
