@@ -16,7 +16,7 @@ const authReducer = (state = initialState, action) => {
         case SET_USER_DATA:
             return {
                 ...state,
-                ...action.data,
+                ...action.payload,
                 isAuth: true
             }
 
@@ -24,7 +24,8 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setAuthUserData = (userId, email, login, userPhoto) => ({ type: SET_USER_DATA, data:{userId, email, login, userPhoto} })
+export const setAuthUserData = (userId = 19470, email, login, userPhoto, isAuth) =>
+    ({ type: SET_USER_DATA, payload:{userId, email, login, userPhoto, isAuth} })
 
 
 // Thunks
@@ -38,17 +39,27 @@ export const getAuthUser = () => {
                     imgUrl = response;
                 })
 
-                dispatch(setAuthUserData(userId, email, login, imgUrl));
+                dispatch(setAuthUserData(userId, email, login, imgUrl, true));
             }
         });
     }
 }
 
-export const setLoginUser = (email, password, rememberMe, captcha = true) => {
+export const setLoginUser = (email, password, rememberMe) => {
     return (dispatch) => {
-        authAPI.loginUser(email, password, rememberMe, captcha).then( response => {
+        authAPI.loginUser(email, password, rememberMe).then( response => {
            if(response.resultCode === 0) {
                 dispatch(getAuthUser());
+           }
+        });
+    }
+}
+
+export const setLogoutUser = () => {
+    return (dispatch) => {
+        authAPI.logoutUser().then(response => {
+           if(response.resultCode === 0) {
+               dispatch(setAuthUserData(null, null, null, null, true));
            }
         });
     }
