@@ -1,5 +1,5 @@
 import React from 'react';
-import {inputMessage, sendMessage} from "../../redux/reducers/dialogsReducer";
+import {sendMessage} from "../../redux/reducers/dialogsReducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
@@ -14,14 +14,9 @@ let mapStateToProps = (state) => {
     };
 }
 
-const AuthRedirectComponent = withAuthRedirect(Dialogs);
 
-const DialogsContainer = connect(mapStateToProps, {
-    sendMessage,
-    inputMessage,
-})(AuthRedirectComponent);
 
 export default compose(
-    connect(mapStateToProps, {sendMessage, inputMessage,}),
+    connect(mapStateToProps, {sendMessage}),
     withAuthRedirect
 )(Dialogs);
