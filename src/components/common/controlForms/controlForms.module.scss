@@ -1,0 +1,21 @@
+.validation {
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__field {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px red solid;
+    margin-right: 10px;
+  }
+
+
+
+  &__message {
+    color: red;
+  }
+}
