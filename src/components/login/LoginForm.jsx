@@ -4,7 +4,7 @@ import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {Input} from "../common/controlForms/ControlForms";
 
-const maxLength20 = maxLengthCreator(40);
+const maxLength40 = maxLengthCreator(40);
 
 const LoginForm = (props) => {
 
@@ -13,11 +13,11 @@ const LoginForm = (props) => {
             <form onSubmit={props.handleSubmit}>
                 <div className={classes.form__email}>
                     <Field placeholder={"Email"} type={"email"}
-                           component={Input} name={"email"} validate={[required, maxLength20]}/>
+                           component={Input} name={"email"} validate={[required, maxLength40]}/>
                 </div>
                 <div className={classes.form__password}>
                     <Field placeholder={"Password"} type={"password"}
-                           component={Input} name={"password"} validate={[required, maxLength20]} />
+                           component={Input} name={"password"} validate={[required, maxLength40]} />
                 </div>
                 <div className={classes.form__checkbox}>
                     <Field className={classes.form__checkbox_style}  type={"checkbox"} component={"input"} name={"checkbox"}/> Remember me

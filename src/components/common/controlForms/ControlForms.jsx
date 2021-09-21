@@ -1,6 +1,7 @@
 import React from 'react';
-import classes from "../../login/login.module.scss";
+import loginStyles from "../../login/login.module.scss";
 import errorsStyles from './controlForms.module.scss';
+import postStyles from '../../profile/myPosts/myPosts.module.scss'
 
 const ControlForms = ({input, meta, child, ...props}) => {
     const hasErrors = meta.touched && meta.error;
@@ -22,18 +23,19 @@ export const Input = (props) => {
 
     return (
         <ControlForms {...props}>
-                <input className={`${classes.form__style}`}
+                <input className={`${loginStyles.form__style}`}
                        {...input} {...restProps}/>
         </ControlForms>
     );
 }
 
-export const PostText = (props) => {
+export const Textarea = (props) => {
     const {input, meta, child, ...restProps} = props;
 
     return (
         <ControlForms {...props}>
-            <textarea />
+            <textarea className={postStyles.posts__text}
+                {...input} {...restProps}/>
         </ControlForms>
     );
 }
