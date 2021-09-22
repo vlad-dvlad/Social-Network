@@ -6,7 +6,7 @@ export const authAPI = {
             .then(response => response.data);
     },
 
-    getAuthUserAvatar(id) {
+    getAuthUserAvatar(id = 2) {
         return instance.get(`profile/${id}`)
             .then(response => response.data.photos.small);
     },
