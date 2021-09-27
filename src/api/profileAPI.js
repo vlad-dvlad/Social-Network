@@ -1,12 +1,12 @@
 import {instance} from "./api";
 
 export const profileAPI = {
-    getProfile(userId = 2) {
+    getProfile(userId) {
         return instance.get(`profile/${userId}`)
             .then(response => response.data);
     },
 
-    getStatus(userId = 19470) {
+    getStatus(userId) {
         return instance.get(`profile/status/${userId}`);
 
     },

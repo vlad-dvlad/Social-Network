@@ -105,29 +105,24 @@ export const getUsers = (currentPage, pageSize) => {
     }
 }
 
-export const followUsers = (userId) => {
-    return (dispatch) => {
-        dispatch(toggleIsFollowingProgress(true, userId));
-        userAPI.followUser(userId).then(response => {
-            if(response.resultCode === 0){
-                dispatch(follow(userId));
-            }
-            dispatch(toggleIsFollowingProgress(false, userId));
-        });
-    }
+export const followUsers = (userId) => (dispatch) => {
+    dispatch(toggleIsFollowingProgress(true, userId));
+    userAPI.followUser(userId).then(response => {
+        if (response.resultCode === 0) {
+            dispatch(follow(userId));
+        }
+        dispatch(toggleIsFollowingProgress(false, userId));
+    });
 }
 
-export const unFollowUsers = (userId) => {
-    return (dispatch) => {
-        dispatch(toggleIsFollowingProgress(true, userId));
-        userAPI.unfollowUser(userId).then(response => {
-            if(response.resultCode === 0){
-                dispatch(unFollow(userId));
-            }
-            dispatch(toggleIsFollowingProgress(false, userId));
-        });
-    }
+export const unFollowUsers = (userId) => (dispatch) => {
+    dispatch(toggleIsFollowingProgress(true, userId));
+    userAPI.unfollowUser(userId).then(response => {
+        if (response.resultCode === 0) {
+            dispatch(unFollow(userId));
+        }
+        dispatch(toggleIsFollowingProgress(false, userId));
+    });
 }
-
 
 export default usersReducer;

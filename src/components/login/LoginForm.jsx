@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./login.module.scss";
+import errors from "../common/controlForms/controlForms.module.scss";
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {Input} from "../common/controlForms/ControlForms";
@@ -22,6 +23,11 @@ const LoginForm = (props) => {
                 <div className={classes.form__checkbox}>
                     <Field className={classes.form__checkbox_style}  type={"checkbox"} component={"input"} name={"checkbox"}/> Remember me
                 </div>
+                {   props.error &&
+                    <div className={errors.validation__group}>
+                        {props.error}
+                    </div>
+                }
                 <div className={classes.form__btn}>
                     <button className={classes.form__btn_style}>Login</button>
                 </div>
