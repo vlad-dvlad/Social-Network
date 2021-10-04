@@ -1,6 +1,13 @@
+import {createSelector} from "reselect";
+
 export const getUsersItems = (state) => {
     return state.usersPage.users;
 }
+
+export const getUsersSuper = createSelector(getUsersItems, (users) => {
+    debugger
+    return users.filter(u => true);
+});
 
 export const getPageSize = (state) => {
     return state.usersPage.pageSize;
