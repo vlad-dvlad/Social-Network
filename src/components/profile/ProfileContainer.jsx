@@ -33,8 +33,6 @@ class ProfileContainer extends React.Component {
     }
 }
 
-
-
 const mapStateToProps = (state) => {
     return {
         profile: state.profilePage.profile,
@@ -43,7 +41,6 @@ const mapStateToProps = (state) => {
         isAuth: state.auth.isAuth,
     };
 }
-
 
 export default compose(
     connect(mapStateToProps, {getProfile, getStatus, updateStatus} ),

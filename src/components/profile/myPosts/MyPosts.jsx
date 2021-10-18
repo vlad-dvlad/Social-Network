@@ -7,7 +7,10 @@ import {maxLengthCreator, required} from "../../../utils/validators/validators";
 
 const maxLength20 = maxLengthCreator(20);
 
-const MyPosts = (props) => {
+const MyPosts = React.memo(props => {
+
+    console.log("Render");
+
 
     let postsElement = props.posts.map(p => {
         return (
@@ -17,13 +20,11 @@ const MyPosts = (props) => {
         );
     });
 
-
     const onAddPost = (formData) => {
         props.addPost(formData.newPost);
     }
 
-
-    return(
+    return (
         <div className={`${classes.posts} ${classes.posts__container}`}>
             <MyPostsReduxForm onSubmit={onAddPost}/>
             <div>My post</div>
@@ -32,7 +33,7 @@ const MyPosts = (props) => {
             </div>
         </div>
     );
-}
+});
 
 const MyPostsForm = (props) => {
     return (

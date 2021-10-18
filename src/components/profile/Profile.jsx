@@ -11,9 +11,7 @@ const Profile = (props) => {
         <div className={classes.profile}>
             <div className={classes.profile__container}>
                 <ProfileInfo profile={props.profile} updateStatus={props.updateStatus} status={props.status}/>
-                <MyPostsContainer
-                /*                  profileState={props.state} dispatch={props.dispatch}*/
-                />
+                <MyPostsContainer />
             </div>
         </div>
     );
