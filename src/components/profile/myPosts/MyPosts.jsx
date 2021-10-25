@@ -7,12 +7,9 @@ import {maxLengthCreator, required} from "../../../utils/validators/validators";
 
 const maxLength20 = maxLengthCreator(20);
 
-const MyPosts = React.memo(props => {
+const MyPosts = React.memo(({posts, addPost}) => {
 
-    console.log("Render");
-
-
-    let postsElement = props.posts.map(p => {
+    let postsElement = posts.map(p => {
         return (
             <div className={classes.posts__item}>
                 <Post message={p.message} likeCount={p.likesCount} key={p.id}/>
@@ -21,7 +18,7 @@ const MyPosts = React.memo(props => {
     });
 
     const onAddPost = (formData) => {
-        props.addPost(formData.newPost);
+        addPost(formData.newPost);
     }
 
     return (
@@ -35,9 +32,9 @@ const MyPosts = React.memo(props => {
     );
 });
 
-const MyPostsForm = (props) => {
+const MyPostsForm = ({handleSubmit}) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <Field className={classes.posts__text} type={"text"} name={"newPost"}
                    component={Textarea} validate={[required, maxLength20]}/>
             <button>Add post</button>

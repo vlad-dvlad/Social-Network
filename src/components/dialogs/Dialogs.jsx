@@ -10,17 +10,16 @@ import {Textarea} from "../common/controlForms/ControlForms";
 
 const maxLength30 = maxLengthCreator(30);
 
-const Dialogs = (props) => {
+const Dialogs = ({dialogs, messages, sendMessage, isAuth}) => {
 
-    let dialogsElement = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} id={d.id} key={d.id}/>);
-    let messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message} key={m.id}/>);
+    let dialogsElement = dialogs.map(d => <DialogItem name={d.name} id={d.id} key={d.id}/>);
+    let messagesElements = messages.map(m => <Message message={m.message} key={m.id}/>);
 
     const onSendMessage = (formData) => {
-        console.log(formData);
-        props.sendMessage(formData.newMessage);
+        sendMessage(formData.newMessage);
     }
 
-    if(!props.isAuth) {
+    if(!isAuth) {
         return <Redirect to={'/login'}/>
     }
 
@@ -48,9 +47,9 @@ const Dialogs = (props) => {
     );
 }
 
-const DialogsForm = (props) => {
+const DialogsForm = ({handleSubmit}) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <Field className={classes.messages__text} component={Textarea}
                    name={"newMessage"} type={"text"} validate={[required, maxLength30]}/>
             <button className={classes.messages__send}>Send</button>

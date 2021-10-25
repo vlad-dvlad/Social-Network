@@ -6,16 +6,16 @@ import {setLoginUser, setLogoutUser} from "../../redux/reducers/authReducer";
 import {Redirect} from "react-router-dom";
 
 
-const Login = (props) => {
+const Login = ({isAuth, setLoginUser}) => {
     const onSubmit = (formData) => {
-        props.setLoginUser(
+        setLoginUser(
             formData.email,
             formData.password,
             formData.checkbox,
         )
     };
 
-    if(props.isAuth) {
+    if(isAuth) {
         return <Redirect to={"/profile"}/>
     }
 
@@ -32,6 +32,5 @@ const mapStateToProps = (state) => {
         isAuth: state.auth.isAuth,
     }
 }
-
 
 export default connect(mapStateToProps, {setLoginUser, setLogoutUser})(Login);
