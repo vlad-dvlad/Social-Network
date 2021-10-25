@@ -7,11 +7,11 @@ import {Input} from "../common/controlForms/ControlForms";
 
 const maxLength40 = maxLengthCreator(40);
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
 
     return (
         <div className={`${classes.form} ${classes.form__container}`}>
-            <form onSubmit={props.handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className={classes.form__email}>
                     <Field placeholder={"Email"} type={"email"}
                            component={Input} name={"email"} validate={[required, maxLength40]}/>
@@ -23,9 +23,9 @@ const LoginForm = (props) => {
                 <div className={classes.form__checkbox}>
                     <Field className={classes.form__checkbox_style}  type={"checkbox"} component={"input"} name={"checkbox"}/> Remember me
                 </div>
-                {   props.error &&
+                {   error &&
                     <div className={errors.validation__group}>
-                        {props.error}
+                        {error}
                     </div>
                 }
                 <div className={classes.form__btn}>

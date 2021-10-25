@@ -5,7 +5,6 @@ export const getUsersItems = (state) => {
 }
 
 export const getUsersSuper = createSelector(getUsersItems, (users) => {
-    debugger
     return users.filter(u => true);
 });
 

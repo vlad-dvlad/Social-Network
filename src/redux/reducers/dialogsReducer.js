@@ -1,5 +1,5 @@
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const DELETE_MESSAGE = 'DELETE-MESSAGE';
+const SEND_MESSAGE = 'social-network/dialogs/SEND-MESSAGE';
+const DELETE_MESSAGE = 'social-network/dialogs/DELETE-MESSAGE';
 
 let initialState = {
     dialogs: [
@@ -27,7 +27,7 @@ const dialogsReducer = (state = initialState, action) => {
         case DELETE_MESSAGE: {
             return  {
                 ...state,
-                messages: state.messages.filter(m => m.id != action.messageId),
+                messages: state.messages.filter(m => m.id !== action.messageId),
             }
         }
 

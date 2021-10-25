@@ -2,16 +2,17 @@ import React from 'react';
 import loginStyles from "../../login/login.module.scss";
 import errorsStyles from './controlForms.module.scss';
 import postStyles from '../../profile/myPosts/myPosts.module.scss'
+import {Field} from "redux-form";
 
-const ControlForms = ({input, meta, child, ...props}) => {
-    const hasErrors = meta.touched && meta.error;
+const ControlForms = ({meta:{touched, error}, children}) => {
+    const hasErrors = touched && error;
     return (
         <div className={errorsStyles.validation__container}>
             <div className={(hasErrors ? errorsStyles.validation__field : "")}>
-                { props.children }
+                { children }
             </div>
             <div className={errorsStyles.validation__message}>
-                {hasErrors && <span>{meta.error}</span>}
+                {hasErrors && <span>{error}</span>}
             </div>
 
         </div>
@@ -37,5 +38,13 @@ export const Textarea = (props) => {
             <textarea className={postStyles.posts__text}
                 {...input} {...restProps}/>
         </ControlForms>
+    );
+}
+
+export const createField = (placeholder, name, validators, component, text = "") => {
+    return (
+        <Field placeholder={placeholder} type={name}
+               component={component} name={name} validate={[...validators]}
+        />
     );
 }

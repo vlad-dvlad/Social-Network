@@ -4,17 +4,11 @@ import bg from "../../../assets/img/bg.jpg";
 import Preloader from "../../common/preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
+const ProfileInfo = ({profile, status, updateStatus}) => {
 
-
-
-
-const ProfileInfo = (props) => {
-
-    if(!props.profile) {
+    if(!profile) {
         return <Preloader />;
     }
-
-    let contacts = props.profile.contacts;
 
     return (
         <div className={classes.profile__main}>
@@ -23,13 +17,13 @@ const ProfileInfo = (props) => {
             </div>
             <div className={classes.profile__info}>
                 <div className={classes.profile__ava}>
-                    <img src={!props.profile.photos.large} alt=""/>
+                    <img src={!profile.photos.large} alt=""/>
                 </div>
                 <div className={classes.profile__description}>
                     Description
-                    <div>{props.profile.fullName}</div>
-                    <div>{props.profile.aboutMe}</div>
-                    <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                    <div>{profile.fullName}</div>
+                    <div>{profile.aboutMe}</div>
+                    <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
                 </div>
             </div>
         </div>

@@ -9,8 +9,6 @@ import {withRouter} from "react-router-dom";
 import {initializedApp} from "./redux/reducers/appReducer";
 import Preloader from "./components/common/preloader/Preloader";
 
-
-
 class App extends Component {
 
     componentDidMount() {
