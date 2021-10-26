@@ -2,12 +2,13 @@ import './App.scss';
 import Content from './components/content/Content';
 import Footer from './components/footer/Footer';
 import HeaderContainer from "./components/header/HeaderContainer";
-import {Component} from "react";
-import {connect} from "react-redux";
+import React, {Component} from "react";
+import {connect, Provider} from "react-redux";
 import {compose} from "redux";
-import {withRouter} from "react-router-dom";
+import {BrowserRouter, withRouter} from "react-router-dom";
 import {initializedApp} from "./redux/reducers/appReducer";
 import Preloader from "./components/common/preloader/Preloader";
+import store from "./redux/reduxStore";
 
 class App extends Component {
 
@@ -36,7 +37,19 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default compose(
+const AppContainer = compose(
     withRouter,
     connect(mapStateToProps, {initializedApp})
 )(App);
+
+const MainApp = (props) => {
+    return (
+        <BrowserRouter>
+            <Provider store={store}>
+                <AppContainer />
+            </Provider>
+        </BrowserRouter>
+    );
+}
+
+export default MainApp;
