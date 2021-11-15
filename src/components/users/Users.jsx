@@ -13,7 +13,7 @@ const Users = ({currentPage, onPageChanged, pageSize, totalUsersCount,  ...props
                                     followingInProgress={props.followingInProgress} key={u.id}/>)
             }
             <Paginator currentPage={currentPage} onPageChanged={onPageChanged}
-                       pageSize={pageSize} totalUsersCount={totalUsersCount}/>
+                       pageSize={pageSize} totalItemsCount={totalUsersCount}/>
         </div>
     );
 }
