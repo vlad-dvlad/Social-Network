@@ -105,6 +105,14 @@
     background-color: #d13129;
     color: #eeeeee;
     padding: 3px 5px;
+
     border-radius: 15%;
+  }
+
+  &__item {
+    margin: 0px 5px;
+    padding: 7px;
+    border: 1px solid black;
+
   }
 }
