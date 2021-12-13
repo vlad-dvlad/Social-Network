@@ -1,0 +1,2 @@
+(this["webpackJsonpsocial-network"]=this["webpackJsonpsocial-network"]||[]).push([[7],{301:function(n,s,e){n.exports={news:"news_news__ytUV_"}},305:function(n,s,e){"use strict";e.r(s);e(0);var t=e(301),c=e.n(t),a=e(1);s.default=function(){return Object(a.jsx)("div",{className:"".concat(c.a.news," ").concat(c.a.news__container),children:"News"})}}}]);
+//# sourceMappingURL=7.edae699a.chunk.js.map

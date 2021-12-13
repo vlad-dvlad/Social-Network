@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/news/news.module.scss"],"names":[],"mappings":"AAAA,kBACE,UAAW,CACX,YAAa","file":"7.fef1fd2e.chunk.css","sourcesContent":[".news {\r\n  width: 100%;\r\n  flex: 1 1 85%;\r\n  &__container {\r\n\r\n  }\r\n}"]}
