@@ -108,11 +108,17 @@
         text-transform: uppercase;
         font-family: 'Poppins', sans-serif;
         color: #fff;
+        cursor: pointer;
         a {
             color: #fff;
         }
 
         font-weight: 500;
+    }
+
+    &__exit {
+
+
     }
 }
 

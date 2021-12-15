@@ -41,10 +41,11 @@ export const Textarea = (props) => {
     );
 }
 
-export const createField = (placeholder, name, validators, component, text = "") => {
+export const createField = (placeholder, name, validators, component, props={}, text = "") => {
     return (
         <Field placeholder={placeholder} type={name}
                component={component} name={name} validate={[...validators]}
+               {...props}
         />
     );
 }

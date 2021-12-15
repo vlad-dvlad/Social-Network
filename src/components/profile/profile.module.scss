@@ -31,7 +31,10 @@
     }
 
     &__ava {
-
+        img {
+            max-width: 200px;
+            height: auto;
+        }
     }
 
     &__description {
