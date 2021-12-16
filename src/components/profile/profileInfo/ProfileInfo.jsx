@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import classes from '../profile.module.scss'
-import bg from "../../../assets/img/bg.jpg";
 import Preloader from "../../common/preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/img/cat.png";
@@ -29,9 +28,6 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
 
     return (
         <div className={classes.profile__main}>
-            <div className={classes.profile__header}>
-                <img src={bg} alt="" />
-            </div>
             <div className={classes.profile__info}>
                 <div className={classes.profile__ava}>
                     <img src={profile.photos.large || userPhoto} alt="" />

@@ -14,7 +14,10 @@ class App extends Component {
 
     componentDidMount() {
         this.props.initializedApp();
+
     }
+
+
 
     render() {
         if(!this.props.initialized) {
@@ -42,7 +45,7 @@ const AppContainer = compose(
     connect(mapStateToProps, {initializedApp})
 )(App);
 
-const MainApp = (props) => {
+const MainApp = () => {
     return (
         <HashRouter>
             <Provider store={store}>

@@ -3,8 +3,6 @@ import classes from './profile.module.scss';
 import ProfileInfo from "./profileInfo/ProfileInfo";
 import MyPostsContainer from "./myPosts/MyPostsContainer";
 
-
-
 const Profile = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
 
     return (
