@@ -11,8 +11,8 @@ export const authAPI = {
             .then(response => response.data.photos.small);
     },
 
-    loginUser(email, password, rememberMe = false) {
-        return instance.post(`/auth/login`, {email, password, rememberMe})
+    loginUser(email, password, rememberMe = false, captcha = null) {
+        return instance.post(`/auth/login`, {email, password, rememberMe, captcha})
             .then(response => response.data);
     },
 

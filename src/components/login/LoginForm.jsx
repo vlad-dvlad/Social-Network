@@ -7,7 +7,7 @@ import {Input} from "../common/controlForms/ControlForms";
 
 const maxLength40 = maxLengthCreator(40);
 
-const LoginForm = ({handleSubmit, error}) => {
+const LoginForm = ({handleSubmit, error, captchaUrl}) => {
 
     return (
         <div className={`${classes.form} ${classes.form__container}`}>
@@ -23,6 +23,14 @@ const LoginForm = ({handleSubmit, error}) => {
                 <div className={classes.form__checkbox}>
                     <Field className={classes.form__checkbox_style}  type={"checkbox"} component={"input"} name={"checkbox"}/> Remember me
                 </div>
+                {
+                    captchaUrl && <img src={captchaUrl} alt=""/>
+                }
+                {
+                    captchaUrl &&
+                    <Field className={classes.form__email}  type={"text"} component={Input} name={"captcha"} validate={[required]}/>
+
+                }
                 {   error &&
                     <div className={errors.validation__group}>
                         {error}
