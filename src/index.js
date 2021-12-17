@@ -3,7 +3,9 @@ import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import ReactDOM from 'react-dom';
 import './index.scss';
+import "bootstrap/dist/css/bootstrap-grid.min.css"
 import MainApp from "./App";
+
 
 ReactDOM.render( <MainApp />, document.getElementById('root'));
 

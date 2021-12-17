@@ -1,3 +1,6 @@
+$ffp: 'Poppins', sans-serif;
+$ffr: 'Roboto', sans-serif;
+
 .header {
     position: fixed;
     top: 0;
@@ -5,17 +8,15 @@
     z-index: 5;
 
     width: 100%;
-    height: 90px;
+    height: 70px;
 
     
-    background-color:#d13129; // main color(header, nav)
-    
+    background-color: #186CCD; // main color(header, nav)
+    //#d13129
+
     &__container {
-        display: flex;
-        align-items: center;
-        max-width: 100%;
-        padding: 0px 20px;
-        justify-content: space-between;
+        height: 100%;
+        padding: 0 25px;
     }
 
     &__main {
@@ -24,32 +25,11 @@
         max-width: 100%;
     }
 
-    &__logo {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 78px;
-        height: 78px;
-        background-color: #fff;
-        border-radius: 50%;
-        margin: 5px 0px 5px 0px;
-    }
-
-    &__logo img {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 75px;
-        height: 75px;
-    }
 
     &__title {
-        margin-left: 20px;
         font-size: 30px;
         line-height: 32px;
-        text-transform: uppercase;
-        font-family: 'Poppins', sans-serif;
+        font-family: $ffp;
         a {
             color: #fff;
         }
@@ -57,10 +37,14 @@
         font-weight: 700;
     }
 
-    &__icon {
+
+    &__menu {
         display: none;
     }
 
+    &__icon {
+        display: none;
+    }
 
 
     &__photo {
@@ -105,8 +89,7 @@
     &__link {
         font-size: 22px;
         line-height: 18px;
-        text-transform: uppercase;
-        font-family: 'Poppins', sans-serif;
+        font-family: $ffr;
         color: #fff;
         cursor: pointer;
         a {
@@ -123,40 +106,30 @@
 }
 
 
-
-
-
-
 @media (max-width: 991px) {
     .header {
         position: relative;
-        height: 70px;
 
         &__container {
-            justify-content: space-between;
+            align-items: center;
         }
         
-        &__logo {
-            width: 63px;
-            height: 63px;
-        }
 
-        &__logo img {
-            width: 60px;
-            height: 60px;
-        }
 
         &__title {
             font-size: 24px;
         }
-
+        &__menu {
+            display: flex;
+        }
         &__icon {
             display: block;
             width: 40px;
             height: 26px;
 
             position: relative;
-    
+
+
 
             
             &::before {
@@ -165,7 +138,7 @@
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 1.5px;
+                height: 1px;
                 background-color: #fff;
             }
 
@@ -175,7 +148,7 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                height: 1.5px;
+                height: 1px;
                 background-color: #fff;
     
             }
@@ -186,11 +159,15 @@
                 transform: scale(1) translate(0px, -50%);
                 left: 0;
                 width: 100%;
-                height: 1.5px;
+                height: 1px;
                 background-color: #fff;
             }
         }
     }
+
+}
+
+@media (max-width: 767px) {
 
 }
 
