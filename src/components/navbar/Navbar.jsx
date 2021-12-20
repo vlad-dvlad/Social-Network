@@ -1,11 +1,12 @@
 import React from 'react';
-import classes from './navbar.module.scss'
+import styles from './navbar.module.scss'
 import {NavLink} from "react-router-dom";
+import Login from "../login/Login";
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
-        <nav className={`${classes.navbar} ${classes.navbar__container}`}>
-            <ul className={`${classes.list} ${classes.navbar__list}`}>
+        <nav className={`${styles.navbar} ${styles.navbar__container}`}>
+            <ul className={`${styles.list} ${styles.navbar__list}`}>
                 <li><NavLink to="/profile">Profile</NavLink></li>
                 <li><NavLink to="/dialogs">Messages</NavLink></li>
                 <li><NavLink to="/news">News</NavLink></li>
@@ -13,6 +14,14 @@ const Navbar = () => {
                 <li><NavLink to="/users">Users</NavLink></li>
                 <li><NavLink to="/settings">Settings</NavLink></li>
             </ul>
+
+            <div className={styles.login__link}>
+                {
+                    props.isAuth
+                        ? <div onClick={props.setLogoutUser} className={styles.login__exit}>Logout</div>
+                        : <NavLink to={'/login'} render={ () => <Login />}>Login</NavLink>
+                }
+            </div>
         </nav>
     );
 }

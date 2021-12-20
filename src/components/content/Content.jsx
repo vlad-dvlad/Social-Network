@@ -3,6 +3,7 @@ import Navbar from '../navbar/Navbar';
 import classes from './content.module.scss'
 import {Redirect, Route} from "react-router-dom";
 import {WithSuspense} from "../../hoc/WithSuspense";
+import NavbarContainer from "../navbar/NavbarContainer";
 
 const DialogsContainer = React.lazy(() => import('../dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import('../profile/ProfileContainer'));
@@ -17,7 +18,7 @@ const Music = React.lazy( () => import ('../music/Music'));
 const Content = () => {
     return (
         <main className={`${classes.main} ${classes.main__container}`}>
-            <Navbar/>
+            <NavbarContainer/>
             <Route path="/" render={() => <Redirect to={"/profile"}/> }/>
             <Route path="/profile/:userId?" render={ WithSuspense(ProfileContainer) } />
             <Route path="/dialogs" render={ WithSuspense(DialogsContainer)}/>

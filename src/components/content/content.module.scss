@@ -4,8 +4,18 @@
 
 
     &__container {
-        padding-top: 90px;
+        padding-top: 70px;
         display: flex;
 
     }
+}
+
+@media (max-width: 991px){
+    .main {
+
+        &__container {
+            padding-top: 0px;
+        }
+    }
+
 }

@@ -11,7 +11,7 @@ $ffr: 'Roboto', sans-serif;
     height: 70px;
 
     
-    background-color: #186CCD; // main color(header, nav)
+    background-color: #186ccd; // main color(header, nav)
     //#d13129
 
     &__container {
@@ -113,14 +113,17 @@ $ffr: 'Roboto', sans-serif;
         &__container {
             align-items: center;
         }
-        
-
+        &__main {
+            order: 2;
+        }
 
         &__title {
             font-size: 24px;
+            line-height: 25px;
         }
         &__menu {
             display: flex;
+            order: 3;
         }
         &__icon {
             display: block;
@@ -164,11 +167,30 @@ $ffr: 'Roboto', sans-serif;
             }
         }
     }
+    .login {
+        order: 1;
+    }
+
 
 }
 
 @media (max-width: 767px) {
+    .header {
+        &__main {
+            order: 2;
+        }
+        &__menu {
+            order: 3;
+        }
 
+        &__title {
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+    .login {
+        order: 1;
+    }
 }
 
 
