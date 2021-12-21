@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./Header";
 import {connect} from "react-redux";
-import {getAuthUser, setLogoutUser} from "../../redux/reducers/authReducer";
+import {showHideNavBar} from "../../redux/reducers/navbarReducer";
 
 class HeaderContainer extends React.Component {
 
@@ -17,7 +17,8 @@ const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
         imgUrl: state.auth.imgUrl,
+        isHiddenNavBar: state.navbar.isHiddenNavBar,
     }
 }
 
-export default connect(mapStateToProps, {})(HeaderContainer);
+export default connect(mapStateToProps, {showHideNavBar})(HeaderContainer);

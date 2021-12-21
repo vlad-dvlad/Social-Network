@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import userPhoto from "../../assets/img/cat.png";
 import classNames from "classnames";
 
-const Header = (props) => {
+const Header = ({isAuth, imgUrl, showHideNavBar}) => {
     return (
         <header className={classNames(styles.header, "container-fluid", "p-0")}>
             <div className={classNames(styles.header__container, "row")}>
@@ -19,13 +19,13 @@ const Header = (props) => {
 
                 <div className={classNames(styles.login, styles.login__container, "col-lg-6", "col-4", "justify-content-lg-end",
                      "p-0")}>
-                    <div className={ props.isAuth ? styles.login__photo : styles.login__notfoto}>
-                        <img src={props.imgUrl != null ? props.imgUrl : userPhoto} alt=""/>
+                    <div className={ isAuth ? styles.login__photo : styles.login__notfoto}>
+                        <img src={imgUrl != null ? imgUrl : userPhoto} alt=""/>
                     </div>
                 </div>
 
                 <div className={classNames(styles.header__menu, "col-4", "justify-content-end", "p-0")}>
-                    <div className={classNames(styles.header__icon)}>
+                    <div className={classNames(styles.header__icon)} >
                         <span></span>
                     </div>
                 </div>
