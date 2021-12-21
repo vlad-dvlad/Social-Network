@@ -43,7 +43,7 @@ $ffr: 'Roboto', sans-serif;
     }
 
     &__icon {
-        display: none;
+
     }
 
 
@@ -60,6 +60,8 @@ $ffr: 'Roboto', sans-serif;
         }
     }
 }
+
+.active {}
 
 .login {
 
@@ -108,7 +110,9 @@ $ffr: 'Roboto', sans-serif;
 
 @media (max-width: 991px) {
     .header {
-        position: relative;
+        position: fixed;
+        height: 60px;
+        overflow: hidden;
 
         &__container {
             align-items: center;
@@ -121,6 +125,8 @@ $ffr: 'Roboto', sans-serif;
             font-size: 24px;
             line-height: 25px;
         }
+
+
         &__menu {
             display: flex;
             order: 3;
@@ -143,6 +149,7 @@ $ffr: 'Roboto', sans-serif;
                 width: 100%;
                 height: 2px;
                 background-color: #fff;
+                transition: all 0.3s ease 0s;
             }
 
             &::after {
@@ -153,6 +160,7 @@ $ffr: 'Roboto', sans-serif;
                 width: 100%;
                 height: 2px;
                 background-color: #fff;
+                transition: all 0.3s ease 0s;
             }
 
             span {
@@ -163,13 +171,39 @@ $ffr: 'Roboto', sans-serif;
                 width: 100%;
                 height: 2px;
                 background-color: #fff;
+                transition: all 0.3s ease 0s;
+            }
+        }
+
+        &__icon.active:before {
+            transform: rotate(45deg);
+            top: 12px;
+        }
+
+        &__icon.active:after {
+            transform: rotate(-45deg);
+            bottom: 12px;
+        }
+
+        &__icon.active {
+            span {
+                transform: scale(0);
             }
         }
     }
     .login {
         order: 1;
-    }
 
+        &__photo {
+            width: 45px;
+            height: 45px;
+
+
+        }
+    }
+    .active {
+
+    }
 
 }
 
@@ -182,6 +216,7 @@ $ffr: 'Roboto', sans-serif;
             order: 3;
         }
 
+
         &__title {
             font-size: 20px;
             text-align: center;
@@ -189,6 +224,10 @@ $ffr: 'Roboto', sans-serif;
     }
     .login {
         order: 1;
+    }
+
+    .active {
+
     }
 }
 

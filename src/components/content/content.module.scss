@@ -19,9 +19,10 @@
 
 @media (max-width: 991px){
     .main {
+        overflow: hidden;
 
         &__container {
-            padding-top: 0px;
+            padding-top: 60px;
         }
     }
 

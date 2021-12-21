@@ -4,23 +4,17 @@ import {NavLink} from "react-router-dom";
 import Login from "../login/Login";
 import classNames from "classnames";
 
-const Navbar = ({isAuth, isHiddenNavBar, setLogoutUser, showHideNavBar}) => {
-
-    if(isHiddenNavBar) {
-        // NavBar hide () => showHideNavBar
-    }
-
-
+const Navbar = ({isAuth, isShowedNavBar, setLogoutUser, showHideNavBar}) => {
 
     return (
-        <nav className={classNames(styles.navbar, styles.navbar__menu)}>
+        <nav className={classNames(styles.navbar, styles.navbar__menu, {[styles.active]: isShowedNavBar})}>
             <ul className={classNames(styles.navbar__list)}>
-                <li><NavLink to="/profile">Profile</NavLink></li>
-                <li><NavLink to="/dialogs">Messages</NavLink></li>
-                <li><NavLink to="/news">News</NavLink></li>
-                <li><NavLink to="/music">Music</NavLink></li>
-                <li><NavLink to="/users">Users</NavLink></li>
-                <li><NavLink to="/settings">Settings</NavLink></li>
+                <li onClick={() => showHideNavBar(false)}><NavLink to="/profile">Profile</NavLink></li>
+                <li onClick={() => showHideNavBar(false)}><NavLink to="/dialogs">Messages</NavLink></li>
+                <li onClick={() => showHideNavBar(false)}><NavLink to="/news">News</NavLink></li>
+                <li onClick={() => showHideNavBar(false)}><NavLink to="/music">Music</NavLink></li>
+                <li onClick={() => showHideNavBar(false)}><NavLink to="/users">Users</NavLink></li>
+                <li onClick={() => showHideNavBar(false)}><NavLink to="/settings">Settings</NavLink></li>
             </ul>
 
             <div className={classNames(styles.login__link)}>

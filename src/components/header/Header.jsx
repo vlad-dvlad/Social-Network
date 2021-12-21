@@ -3,8 +3,9 @@ import styles from './header.module.scss';
 import {NavLink} from "react-router-dom";
 import userPhoto from "../../assets/img/cat.png";
 import classNames from "classnames";
+import MenuBurger from "../common/menu/MenuBurger";
 
-const Header = ({isAuth, imgUrl, showHideNavBar}) => {
+const Header = ({isAuth, imgUrl, isShowedNavBar, showHideNavBar}) => {
     return (
         <header className={classNames(styles.header, "container-fluid", "p-0")}>
             <div className={classNames(styles.header__container, "row")}>
@@ -25,9 +26,10 @@ const Header = ({isAuth, imgUrl, showHideNavBar}) => {
                 </div>
 
                 <div className={classNames(styles.header__menu, "col-4", "justify-content-end", "p-0")}>
-                    <div className={classNames(styles.header__icon)} >
+{/*                    <div className={classNames(styles.header__icon)} >
                         <span></span>
-                    </div>
+                    </div>*/}
+                    <MenuBurger isShowedNavBar={isShowedNavBar} showHideNavBar={showHideNavBar}/>
                 </div>
 
             </div>

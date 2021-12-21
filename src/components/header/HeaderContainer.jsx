@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
         imgUrl: state.auth.imgUrl,
-        isHiddenNavBar: state.navbar.isHiddenNavBar,
+        isShowedNavBar: state.navbar.isShowedNavBar,
     }
 }
 

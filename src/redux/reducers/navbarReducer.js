@@ -1,18 +1,18 @@
 const SHOW_HIDE_NAVBAR = "social-network/navbar/SHOW_HIDE_NAVBAR";
 
 const initialState = {
-    isHiddenNavBar: true,
+    isShowedNavBar: false,
 };
 
 const navbarReducer = (state = initialState, action) => {
     switch (action.type) {
         case SHOW_HIDE_NAVBAR:
-            return {isHiddenNavBar: action.isHiddenNavBar}
+            return {isShowedNavBar: action.isShowedNavBar}
 
         default: return state;
     }
 }
 
-export const showHideNavBar = (isHiddenNavBar) => ({type: SHOW_HIDE_NAVBAR, isHiddenNavBar})
+export const showHideNavBar = (isShowedNavBar) => ({type: SHOW_HIDE_NAVBAR, isShowedNavBar})
 
 export default navbarReducer;

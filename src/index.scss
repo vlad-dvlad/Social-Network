@@ -46,6 +46,7 @@ html, body {
   -webkit-text-size-adjust: 100%;
 }
 
+
 input, button, textarea {
   font-family: inherit;
 }
@@ -100,4 +101,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .root {
   height: 100%;
+}
+@media (max-width: 991px) {
+  body.lock{
+    overflow: hidden;
+  }
 }

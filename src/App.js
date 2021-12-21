@@ -9,11 +9,13 @@ import {HashRouter, withRouter} from "react-router-dom";
 import {initializedApp} from "./redux/reducers/appReducer";
 import Preloader from "./components/common/preloader/Preloader";
 import store from "./redux/reduxStore";
+import classNames from "classnames";
 
 class App extends Component {
 
     componentDidMount() {
         this.props.initializedApp();
+
 
     }
 
@@ -25,7 +27,7 @@ class App extends Component {
         }
 
         return (
-            <div className="wrapper">
+            <div className={classNames("wrapper")}>
                 <HeaderContainer/>
                 <Content/>
                 <Footer/>
