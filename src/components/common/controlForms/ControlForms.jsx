@@ -3,12 +3,13 @@ import loginStyles from "../../login/login.module.scss";
 import errorsStyles from './controlForms.module.scss';
 import postStyles from '../../profile/myPosts/myPosts.module.scss'
 import {Field} from "redux-form";
+import classNames from "classnames";
 
 const ControlForms = ({meta:{touched, error}, children}) => {
     const hasErrors = touched && error;
     return (
         <div className={errorsStyles.validation__container}>
-            <div className={(hasErrors ? errorsStyles.validation__field : "")}>
+            <div className={classNames( {[errorsStyles.validation__field]: hasErrors} )}>
                 { children }
             </div>
             <div className={errorsStyles.validation__message}>

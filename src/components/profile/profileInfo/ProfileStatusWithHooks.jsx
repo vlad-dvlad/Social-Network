@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import styles from "../profile.module.scss";
 
 const ProfileStatusWithHooks  = (props) => {
 
@@ -20,7 +21,7 @@ const ProfileStatusWithHooks  = (props) => {
 
 
     return (
-        <div>
+        <div className={styles.data__status}>
             {
                 !editMode &&
                 <div>

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import classes from "../../users/users.module.scss";
-
+import styles from "../../users/users.module.scss";
+import classNames from "classnames";
 
 const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
     let pageCount = Math.ceil(totalItemsCount / pageSize);
@@ -16,25 +16,24 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, porti
     let rightPortionPageNumber = portionNumber * portionSize;
 
     return (
-        <div className={`${classes.page} ${classes.page__container}`}>
+        <div className={classNames(styles.page, styles.page__container)}>
             {
                 portionCount > 1 &&
-                    <button className={classes.page__btn} onClick={() => {setPortionNumber(portionNumber - 1)}}>PREV</button>
+                    <button className={styles.page__btn} onClick={() => {setPortionNumber(portionNumber - 1)}}>PREV</button>
             }
 
             {pages
                 .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                 .map(p => {
-                return <span className={
-                    currentPage === p && classes.page__selected}
+                return <span className={ classNames({[styles.page__selected]: currentPage === p})}
                              onClick={() => {
                                  onPageChanged(p)
-                             }} key={p}><span className={classes.page__item}>{p}</span></span>;
+                             }} key={p}><span className={styles.page__item}>{p}</span></span>;
             })
             }
             {
                portionCount > portionNumber &&
-               <button className={classes.page__btn}  onClick={() => {setPortionNumber(portionNumber + 1)} }>NEXT</button>
+               <button className={styles.page__btn}  onClick={() => {setPortionNumber(portionNumber + 1)} }>NEXT</button>
             }
         </div>
     );
