@@ -112,6 +112,12 @@ input[type="file"] {
         line-height: 18px;
         color: #6a6e6e;
         margin-bottom: 10px;
+
+        input[type='checkbox'] {
+            width: 15px;
+            height: 15px;
+        }
+
     }
 
     &__edit {
