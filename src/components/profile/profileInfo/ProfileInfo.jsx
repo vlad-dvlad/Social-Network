@@ -32,9 +32,12 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
             <div className={styles.profile__info}>
                 <div className={styles.profile__ava}>
                     <img src={profile.photos.large || userPhoto} alt="" />
-                    <label className={styles.profile__load}>
-                        {isOwner && <input type={"file"} onChange={onChangeAvatar} />}Change Photo
-                    </label>
+                    {
+                        isOwner &&
+                        <label className={styles.profile__load}>
+                            <input type={"file"} onChange={onChangeAvatar} />Change Photo
+                        </label>
+                    }
                 </div>
                 <div className={classNames(styles.profile__data, styles.data)}>
                     <span className={styles.data__name}>{profile.fullName}</span>

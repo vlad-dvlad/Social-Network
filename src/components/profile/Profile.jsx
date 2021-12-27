@@ -12,7 +12,9 @@ const Profile = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile
                              updateStatus={updateStatus}
                              status={status} isOwner={isOwner}
                              savePhoto={savePhoto} saveProfile={saveProfile}/>
-                <MyPostsContainer />
+                {
+                    isOwner && <MyPostsContainer />
+                }
             </div>
         </div>
     );
