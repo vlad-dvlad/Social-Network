@@ -8,15 +8,15 @@ import styles from "../profile.module.scss";
 const ProfileDataForm = ({handleSubmit, profile, error}) => {
     return (
         <form onSubmit={handleSubmit} className={classes.profile__description}>
-            <div className={styles.data__contacts}>Full name: {createField("Full name", "fullName", [], Input)}</div>
+            <div className={styles.data__contacts}>Full name: {createField("Full name", "fullName", [], Input, {}, "text", [styles.data__form])}</div>
 
-            <div className={styles.data__contacts}>Looking for a job: {createField("", "lookingForAJob", [], Input, {type: "checkbox"})}</div>
+            <div className={styles.data__contacts}>Looking for a job: {createField("", "lookingForAJob", [], Input, {}, "checkbox",  )}</div>
             <div className={styles.data__contacts}>My professional skills:
-                {createField("Skills", "lookingForAJobDescription", [], Textarea, {type: "checkbox"})}
+                {createField("Skills", "lookingForAJobDescription", [], Textarea, {}, "", [styles.data__area], "")}
             </div>
-            <div className={styles.data__contacts}>About Me: {createField("About me", "aboutMe", [], Input)}</div>
+            <div className={styles.data__contacts}>About Me: {createField("About me", "aboutMe", [], Input, {}, "text", [styles.data__form])}</div>
             <div className={styles.data__contacts}>Contacts: {Object.keys(profile.contacts).map(key =>
-                <div key={key}>{createField(key, "contacts." + key, [], Input)}</div>
+                <div key={key}>{createField(key, "contacts." + key, [], Input, {}, "text", [styles.data__form])}</div>
             )}</div>
             {   error &&
             <div className={errors.validation__group}>

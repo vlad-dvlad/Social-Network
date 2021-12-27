@@ -1,5 +1,5 @@
 import {profileAPI} from "../../api/profileAPI";
-import {stopSubmit} from "redux-form";
+import {stopSubmit, reset} from "redux-form";
 
 const ADD_POST = 'social-network/profile/ADD-POST';
 const DELETE_POST = 'social-network/profile/DELETE-POST';
@@ -109,6 +109,11 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
         dispatch(stopSubmit("editProfile", {_error: response.data.messages[0] }));
         return Promise.reject(response.data.messages[0]);
     }
+}
+
+export const addPostClear = (newPost) => async (dispatch) => {
+    await dispatch(addPost(newPost));
+    dispatch(reset("sendPost"));
 }
 
 export default profileReducer;

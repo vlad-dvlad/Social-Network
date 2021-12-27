@@ -1,31 +1,33 @@
 import React from 'react';
-import classes from './myPosts.module.scss';
+import styles from './myPosts.module.scss';
 import Post from './Posts/Post';
-import {Field, reduxForm} from "redux-form";
-import {Textarea} from "../../common/controlForms/ControlForms";
+import {reduxForm} from "redux-form";
+import {createField, Textarea} from "../../common/controlForms/ControlForms";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
 
-const maxLength20 = maxLengthCreator(20);
 
-const MyPosts = React.memo(({posts, addPost}) => {
+
+const maxLength50 = maxLengthCreator(50);
+
+const MyPosts = React.memo(({posts, photo, addPostClear}) => {
 
     let postsElement = posts.map(p => {
         return (
-            <div className={classes.posts__item}>
-                <Post message={p.message} likeCount={p.likesCount} key={p.id}/>
+            <div className={styles.posts__item}>
+                <Post photo={photo} message={p.message} likeCount={p.likesCount} key={p.id}/>
             </div>
         );
     });
 
     const onAddPost = (formData) => {
-        addPost(formData.newPost);
+        addPostClear(formData.newPost);
     }
 
     return (
-        <div className={`${classes.posts} ${classes.posts__container}`}>
+        <div className={`${styles.posts} ${styles.posts__container}`}>
             <MyPostsReduxForm onSubmit={onAddPost}/>
-            <div>My post</div>
-            <div className={classes.posts__items}>
+            <div className={styles.posts__title}>My post</div>
+            <div className={styles.posts__items}>
                 {postsElement}
             </div>
         </div>
@@ -34,10 +36,10 @@ const MyPosts = React.memo(({posts, addPost}) => {
 
 const MyPostsForm = ({handleSubmit}) => {
     return (
-        <form onSubmit={handleSubmit}>
-            <Field className={classes.posts__text} type={"text"} name={"newPost"}
-                   component={Textarea} validate={[required, maxLength20]}/>
-            <button>Add post</button>
+        <form onSubmit={handleSubmit} className={styles.posts__form}>
+            {createField("Enter something", "newPost", [required, maxLength50],
+                Textarea, {}, "text", [styles.posts__text])}
+            <button className={styles.posts__btn}>Add post</button>
         </form>
     );
 }

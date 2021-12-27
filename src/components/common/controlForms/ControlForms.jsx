@@ -21,31 +21,35 @@ const ControlForms = ({meta:{touched, error}, children}) => {
 }
 
 export const Input = (props) => {
-    const {input, meta, child, ...restProps} = props;
+    const {input, meta, child, styles, ...restProps} = props;
+
+    //`${loginStyles.form__style}`
 
     return (
         <ControlForms {...props}>
-                <input className={`${loginStyles.form__style}`}
+                <input className={classNames(styles)}
                        {...input} {...restProps}/>
         </ControlForms>
     );
 }
 
 export const Textarea = (props) => {
-    const {input, meta, child, ...restProps} = props;
+    const {input, meta, child, styles, ...restProps} = props;
 
     return (
         <ControlForms {...props}>
-            <textarea className={postStyles.posts__text}
+            <textarea className={classNames(styles)}
                 {...input} {...restProps}/>
         </ControlForms>
     );
 }
 
-export const createField = (placeholder, name, validators, component, props={}, text = "") => {
+export const createField = (placeholder, name, validators, component, props={},
+                            type="text", styles=[], text = "") => {
     return (
-        <Field placeholder={placeholder} type={name}
+        <Field placeholder={placeholder} type={type}
                component={component} name={name} validate={[...validators]}
+               styles={styles}
                {...props}
         />
     );
