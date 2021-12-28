@@ -6,7 +6,7 @@ import userPhoto from "../../../assets/img/cat.png";
 import ProfileDataReduxForm from "./ProfileDataForm";
 import classNames from "classnames";
 
-const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
+const ProfileInfo = ({profile, status, isOwner, updateStatus, savePhoto, saveProfile}) => {
     let [editMode, setEditMode] = useState(false);
 
     if(!profile) {
@@ -46,7 +46,6 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                         <ProfileDataReduxForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
                         : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={() => {setEditMode(true)}} />}
                 </div>
-
             </div>
         </div>
     );

@@ -16,8 +16,6 @@ $ffn: 'Nunito', sans-serif;
         width: 100%;
     }
 
-
-
     &__header {
         width: 100%;
     }
@@ -72,10 +70,6 @@ $ffn: 'Nunito', sans-serif;
 input[type="file"] {
     display: none;
 }
-
-/*input[type='file'] {
-    color: transparent;
-}*/
 
 .data {
 
@@ -171,6 +165,6 @@ input[type="file"] {
 
 @media (max-width: 991px) {
     .profile {
-        /*flex: 1 1 100%;*/
+
     }
 }

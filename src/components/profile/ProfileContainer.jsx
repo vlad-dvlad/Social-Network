@@ -2,7 +2,6 @@ import React from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {
-    addPostClear,
     getProfile,
     getStatus,
     savePhoto,
@@ -38,14 +37,14 @@ class ProfileContainer extends React.Component {
         if(this.props.match.params.userId !== prevProps.match.params.userId){
             this.refreshProfile();
         }
-
     }
 
     render() {
 
         return (
-            <Profile {...this.props} isOwner={!this.props.match.params.userId} savePhoto={this.props.savePhoto}
-                     saveProfile={this.props.saveProfile}/>
+            <Profile profile={this.props.profile} status={this.props.status}
+                     isOwner={!this.props.match.params.userId} updateStatus={this.props.updateStatus}
+                     savePhoto={this.props.savePhoto} saveProfile={this.props.saveProfile} />
         );
     }
 }
