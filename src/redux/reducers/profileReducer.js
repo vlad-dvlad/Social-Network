@@ -8,9 +8,6 @@ const SET_STATUS = 'social-network/profile/SET-STATUS';
 const SAVE_PHOTO_SUCCESS = 'social-network/profile/SAVE_PHOTO_SUCCESS';
 const SAVE_PROFILE_SUCCESS = 'social-network/profile/SAVE_PROFILE_SUCCESS';
 
-
-
-
 let initialState = {
     profile: null,
     posts: [

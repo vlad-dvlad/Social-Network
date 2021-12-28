@@ -6,15 +6,18 @@ import {createField, Textarea} from "../../common/controlForms/ControlForms";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
 
 
-
 const maxLength50 = maxLengthCreator(50);
 
-const MyPosts = React.memo(({posts, photo, addPostClear}) => {
+const MyPosts = React.memo(({posts, profile, addPostClear}) => {
+
+    if(!profile) {
+        return <></>;
+    }
 
     let postsElement = posts.map(p => {
         return (
             <div className={styles.posts__item}>
-                <Post photo={photo} message={p.message} likeCount={p.likesCount} key={p.id}/>
+                <Post profile={profile} message={p.message} likeCount={p.likesCount} key={p.id}/>
             </div>
         );
     });
@@ -28,7 +31,11 @@ const MyPosts = React.memo(({posts, photo, addPostClear}) => {
             <MyPostsReduxForm onSubmit={onAddPost}/>
             <div className={styles.posts__title}>My post</div>
             <div className={styles.posts__items}>
-                {postsElement}
+                {
+                    posts.map(p => <div className={styles.posts__item}>
+                        <Post photos={profile.photos} message={p.message} likeCount={p.likesCount} key={p.id}/>
+                    </div>)
+                }
             </div>
         </div>
     );

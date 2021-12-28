@@ -3,7 +3,9 @@ import classes from './profile.module.scss';
 import ProfileInfo from "./profileInfo/ProfileInfo";
 import MyPostsContainer from "./myPosts/MyPostsContainer";
 
-const Profile = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
+const Profile = ({profile, status, updateStatus, isOwner, posts, savePhoto, saveProfile, addPostClear}) => {
+
+    console.log(profile);
 
     return (
         <div className={classes.profile}>
@@ -12,9 +14,8 @@ const Profile = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile
                              updateStatus={updateStatus}
                              status={status} isOwner={isOwner}
                              savePhoto={savePhoto} saveProfile={saveProfile}/>
-                {
-                    isOwner && <MyPostsContainer />
-                }
+                {/*<MyPosts profile={profile} posts={posts} addPostClear={addPostClear} />*/}
+                <MyPostsContainer />
             </div>
         </div>
     );
