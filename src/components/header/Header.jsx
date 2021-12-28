@@ -16,8 +16,6 @@ const Header = ({isAuth, imgUrl, isShowedNavBar, showHideNavBar}) => {
                     </div>
                 </div>
 
-
-
                 <div className={classNames(styles.login, styles.login__container, "col-lg-6", "col-4", "justify-content-lg-end",
                      "p-0")}>
                     <div className={ isAuth ? styles.login__photo : styles.login__notfoto}>
@@ -26,15 +24,11 @@ const Header = ({isAuth, imgUrl, isShowedNavBar, showHideNavBar}) => {
                 </div>
 
                 <div className={classNames(styles.header__menu, "col-4", "justify-content-end", "p-0")}>
-{/*                    <div className={classNames(styles.header__icon)} >
-                        <span></span>
-                    </div>*/}
                     <MenuBurger isShowedNavBar={isShowedNavBar} showHideNavBar={showHideNavBar}/>
                 </div>
-
             </div>
         </header>
-    )
+    );
 }
 
 export default Header;

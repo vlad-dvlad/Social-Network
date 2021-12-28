@@ -40,9 +40,9 @@ export const getAuthUser = () => async (dispatch) => {
     let response = await authAPI.getAuthUser()
     let imgUrl;
     if (response.resultCode === 0) {
-        const {userId, email, login} = response.data;
-        imgUrl = await authAPI.getAuthUserAvatar(userId);
-        dispatch(setAuthUserData(userId, email, login, imgUrl, true));
+        const {id, email, login} = response.data;
+        imgUrl = await authAPI.getAuthUserAvatar(id);
+        dispatch(setAuthUserData(id, email, login, imgUrl, true));
     }
 }
 

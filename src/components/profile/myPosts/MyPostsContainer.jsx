@@ -1,4 +1,3 @@
-import React from 'react';
 import MyPosts from "./MyPosts";
 import {addPostClear} from "../../../redux/reducers/profileReducer";
 import {connect} from "react-redux";
@@ -6,9 +5,8 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-        profile: state.profilePage.profile,
+        imgUrl: state.auth.userPhoto,
         posts: state.profilePage.posts,
-
     }
 }
 

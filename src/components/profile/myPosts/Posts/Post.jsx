@@ -7,7 +7,7 @@ const Post = ({photos, likeCount, message}) => {
         <div className={`${styles.post} ${styles.post__container}`}>
             <div className={styles.post__body}>
                 <div className={styles.post__image}>
-                    <img src={photos.large || userPhoto} alt="" />
+                    <img src={photos || userPhoto} alt="" />
                 </div>
                 <div className={styles.post__text}>
                     {message}

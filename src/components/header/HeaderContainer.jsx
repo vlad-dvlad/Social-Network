@@ -8,7 +8,8 @@ class HeaderContainer extends React.Component {
 
     render() {
         return (
-            <Header {...this.props}/>
+            <Header isAuth={this.props.isAuth} imgUrl={this.props.imgUrl} isShowedNavBar={this.props.isShowedNavBar}
+                    showHideNavBar={this.props.showHideNavBar}/>
         )
     }
 }
@@ -16,7 +17,7 @@ class HeaderContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
-        imgUrl: state.auth.imgUrl,
+        imgUrl: state.auth.userPhoto,
         isShowedNavBar: state.navbar.isShowedNavBar,
     }
 }

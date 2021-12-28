@@ -7,7 +7,7 @@ import {maxLengthCreator, required} from "../../../utils/validators/validators";
 
 const maxLength50 = maxLengthCreator(50);
 
-const MyPosts = React.memo(({posts, profile, addPostClear}) => {
+const MyPosts = React.memo(({posts, imgUrl, addPostClear}) => {
 
     const onAddPost = (formData) => {
         addPostClear(formData.newPost);
@@ -17,21 +17,18 @@ const MyPosts = React.memo(({posts, profile, addPostClear}) => {
         <div className={`${styles.posts} ${styles.posts__container}`}>
             <MyPostsReduxForm onSubmit={onAddPost}/>
             <div className={styles.posts__title}>My post</div>
-            <CreatePost posts={posts} profile={profile}/>
+            <CreatePost posts={posts} imgUrl={imgUrl}/>
         </div>
     );
 });
 
-const CreatePost = ({posts, profile}) => {
-    if(!profile) {
-        return <></>;
-    }
+const CreatePost = ({posts, imgUrl}) => {
 
     return (
         <div className={styles.posts__items}>
             {
-                posts.map(p => <div className={styles.posts__item}>
-                    <Post photos={profile.photos} message={p.message} likeCount={p.likesCount} key={p.id}/>
+                posts.map((p, i)  => <div  key={i}  className={styles.posts__item}>
+                    <Post photos={imgUrl} message={p.message} likeCount={p.likesCount} />
                 </div>)
             }
         </div>
