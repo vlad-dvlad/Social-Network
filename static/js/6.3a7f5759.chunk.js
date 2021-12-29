@@ -1,2 +1,0 @@
-(this["webpackJsonpsocial-network"]=this["webpackJsonpsocial-network"]||[]).push([[6],{303:function(s,c,i){s.exports={music:"music_music__3FFkt"}},307:function(s,c,i){"use strict";i.r(c);i(0);var n=i(303),t=i.n(n),e=i(1);c.default=function(){return Object(e.jsx)("div",{className:t.a.music,children:Object(e.jsx)("div",{className:t.a.music__container,children:"Music"})})}}}]);
-//# sourceMappingURL=6.3a7f5759.chunk.js.map
