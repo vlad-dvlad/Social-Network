@@ -1,3 +1,5 @@
+import {reset} from "redux-form";
+
 const SEND_MESSAGE = 'social-network/dialogs/SEND-MESSAGE';
 const DELETE_MESSAGE = 'social-network/dialogs/DELETE-MESSAGE';
 
@@ -38,5 +40,10 @@ const dialogsReducer = (state = initialState, action) => {
 
 export const sendMessage = (newMessage) => ({type: SEND_MESSAGE, newMessage})
 export const deleteMessage = (messageId) => ({type: DELETE_MESSAGE, messageId})
+
+export const send = (newMessage) => async (dispatch) => {
+    await dispatch(sendMessage(newMessage));
+    dispatch(reset("sendMessage"));
+}
 
 export default dialogsReducer;

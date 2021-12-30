@@ -1,6 +1,5 @@
 .navbar {
     background-color: #eee;
-    //#b32820;
 
     min-height: 100vh;
     max-width: 250px;
@@ -56,8 +55,6 @@
 
 @media (max-width: 991px) {
     .navbar {
-/*        display: none;*/
-/*        overflow: hidden;*/
         overflow: auto;
 
         max-width: 100%;
