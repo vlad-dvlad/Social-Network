@@ -3,7 +3,7 @@ import styles from './dialogs.module.scss';
 import DialogItem from "./dialogItem/DialogItem";
 import Message from "./message/Message";
 import {reduxForm} from "redux-form";
-import {maxLengthCreator, required} from "../../utils/validators/validators";
+import {maxLengthCreator} from "../../utils/validators/validators";
 import {createField, Textarea} from "../common/controlForms/ControlForms";
 import classNames from "classnames";
 
@@ -43,7 +43,7 @@ const Dialogs = ({dialogs, messages, send}) => {
 const DialogsForm = ({handleSubmit}) => {
     return (
         <form className={styles.messages__form} onSubmit={handleSubmit}>
-            {createField("Type your message", "newMessage", [required, maxLength100],
+            {createField("Type your message", "newMessage", [],
                 Textarea, {}, "text", [styles.messages__text])}
             <button className={styles.messages__send}>Send</button>
         </form>

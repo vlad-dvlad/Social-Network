@@ -1,39 +1,42 @@
+$ffp: 'Poppins', sans-serif;
+$ffr: 'Roboto', sans-serif;
+$ffn: 'Nunito', sans-serif;
+
 .login {
   width: 100%;
-  flex: 1 1 85%;
 
   &__container {
     padding: 15px;
     max-width: 1320px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   &__title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-
+    font-family: $ffr;
+    font-size: 24px;
+    line-height: 36px;
     margin-bottom: 10px;
   }
 }
 
 .form {
-
-  &__container {
-
-  }
+  &__container {}
 
   &__email {
-    margin-bottom: 10px;
-
+    margin-bottom: 15px;
   }
 
   &__password {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   &__checkbox {
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    font-family: $ffp;
   }
 
   &__checkbox_style {
@@ -44,31 +47,46 @@
     text-transform: uppercase;
   }
   &__btn_style {
-    width: 250px;
-    height: 30px;
-    background-color:#d13129;
+    width: 450px;
+    height: 40px;
+    background-color: #1a8cff;
     border-radius: 5px;
 
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
+    font-family: $ffp;
     color: #fff;
     border: 1px solid #c5baba;
     transition-delay: 0.6s;
 
     &:hover {
-      background-color: #af2721;
+      background-color: #4aa7ff;
       transition-delay: 0.4s;
     }
   }
 
 
   &__style {
-    font-family: 'Poppins', sans-serif;
-    width: 250px;
-    height: 30px;
+    font-family: $ffp;
+    width: 450px;
+    height: 40px;
     background-color: #eee;
     border-radius: 5px;
     padding-left: 5px;
   }
 
+}
+
+@media (max-width: 767px) {
+  .form {
+
+    &__style {
+      width: 200px;
+      height: 50px;
+    }
+
+    &__btn_style {
+      width: 200px;
+      height: 50px;
+    }
+  }
 }

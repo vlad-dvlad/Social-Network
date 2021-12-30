@@ -1,7 +1,5 @@
 import React from 'react';
-import loginStyles from "../../login/login.module.scss";
 import errorsStyles from './controlForms.module.scss';
-import postStyles from '../../profile/myPosts/myPosts.module.scss'
 import {Field} from "redux-form";
 import classNames from "classnames";
 
