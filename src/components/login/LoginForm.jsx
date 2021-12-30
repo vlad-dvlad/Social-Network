@@ -4,13 +4,13 @@ import errors from "../common/controlForms/controlForms.module.scss";
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {createField, Input} from "../common/controlForms/ControlForms";
-
+import classNames from "classnames";
 const maxLength40 = maxLengthCreator(40);
 
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
 
     return (
-        <div className={`${styles.form} ${styles.form__container}`}>
+        <div className={classNames(styles.form, styles.form__container)}>
             <form onSubmit={handleSubmit}>
                 <div className={styles.form__email}>
                     {createField("Email", "email",[required, maxLength40], Input, {}, "email", [styles.form__style] )}

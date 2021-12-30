@@ -1,8 +1,8 @@
 import React from "react";
-import classes from "./users.module.scss";
+import styles from "./users.module.scss";
 import userPhoto from "../../assets/img/cat.png";
 import {NavLink} from "react-router-dom";
-
+import classNames from "classnames";
 
 const User = ({user, followingInProgress, followUsers, unFollowUsers}) => {
 
@@ -15,9 +15,9 @@ const User = ({user, followingInProgress, followUsers, unFollowUsers}) => {
     }
 
     return (
-        <div key={user.id} className={`${classes.user} ${classes.user__container}`}>
-            <div className={classes.user__main}>
-                <div className={classes.user__avatar}>
+        <div key={user.id} className={classNames(styles.user, styles.user__container)}>
+            <div className={styles.user__main}>
+                <div className={styles.user__avatar}>
                     <NavLink to={'/profile/' + user.id}>
                         <img src={user.photos.small != null ? user.photos.small : userPhoto} alt=""/>
                     </NavLink>
@@ -27,24 +27,22 @@ const User = ({user, followingInProgress, followUsers, unFollowUsers}) => {
                         user.followed
                             ? <button disabled={followingInProgress.some(id => id === user.id)} onClick={() => {
                                 unfollowUser(user.id)
-                            }}
-                                      className={classes.user__btn}>Unfollow</button>
+                            }} className={styles.user__btn}>Unfollow</button>
 
                             : <button disabled={followingInProgress.some(id => id === user.id)} onClick={() => {
                                 followUser(user.id)
-                            }}
-                                      className={classes.user__btn}>Follow</button>
+                            }} className={styles.user__btn}>Follow</button>
                     }
                 </div>
             </div>
-            <div className={classes.user__info}>
-                <div className={classes.user__name}>
+            <div className={styles.user__info}>
+                <div className={styles.user__name}>
                     {user.name}
                 </div>
-                <div className={classes.user__location}>
+                <div className={styles.user__location}>
                     {"u.location.country"}, {"u.location.city"}
                 </div>
-                <div className={classes.user__status}>
+                <div className={styles.user__status}>
                     {user.status}
                 </div>
             </div>

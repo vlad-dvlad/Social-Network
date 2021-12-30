@@ -5,7 +5,7 @@ import Message from "./message/Message";
 import {reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {createField, Textarea} from "../common/controlForms/ControlForms";
-
+import classNames from "classnames";
 
 const maxLength100 = maxLengthCreator(100);
 
@@ -29,7 +29,7 @@ const Dialogs = ({dialogs, messages, send}) => {
 
                     {/*Create message*/}
 
-                    <div className={`${styles.messages} ${styles.messages__container}`}>
+                    <div className={classNames(styles.messages, styles.messages__container)}>
                         <div className={styles.messages__create}>
                             <DialogsReduxForm onSubmit={onSendMessage}/>
                         </div>
