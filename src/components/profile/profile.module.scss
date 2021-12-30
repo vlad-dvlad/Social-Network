@@ -132,12 +132,13 @@ input[type="file"] {
 
     &__form {
         font-family: 'Poppins', sans-serif;
-        width: 250px;
+        max-width: 250px;
+        width: 100%;
         height: 30px;
         background-color: #eee;
         border-radius: 5px;
         padding-left: 5px;
-
+        margin-bottom: 10px;
     }
 
     &__area {
@@ -169,5 +170,26 @@ input[type="file"] {
     }
 }
 @media (max-width: 767px) {
+    .profile {
+        &__info {
+            margin: 0 auto;
+            max-width: 200px;
+            flex-wrap: wrap;
+        }
+
+        &__main {
+            margin-bottom: 50px;
+        }
+    }
+
+    .data {
+        &__form {
+            width: 200px;
+        }
+
+        &__area {
+            width: 200px;
+        }
+    }
 
 }

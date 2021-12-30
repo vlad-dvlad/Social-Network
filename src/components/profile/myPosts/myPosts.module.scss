@@ -52,3 +52,26 @@ $ffn: 'Nunito', sans-serif;
     }
 
 }
+@media (max-width: 767px) {
+    .posts {
+        &__form {
+            margin: 0 auto 20px auto;
+        }
+
+        &__title {
+            text-align: center;
+        }
+        &__container {
+            margin: 0 auto;
+        }
+        &__text {
+            width: 250px;
+            margin: 0 auto 20px auto;
+
+        }
+        &__form {
+            margin: 0 auto 20px auto;
+            width: 250px;
+        }
+    }
+}
