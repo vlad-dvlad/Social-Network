@@ -1,7 +1,9 @@
-.dialogs {
+$ffp: 'Poppins', sans-serif;
+$ffr: 'Roboto', sans-serif;
+$ffn: 'Nunito', sans-serif;
 
+.dialogs {
     width: 100%;
-/*    height: 100%;*/
 
     &__container {
         display: flex;
@@ -15,37 +17,43 @@
         flex: 1 1 20%;
         background-color: #fff;
         border: 1px solid #d5d5d5;
-
     }
 
     &__dialog {
         display: flex;
         width: 100%;
         height: 70px;
-        padding: 10px 0px 0px 5px;
+        padding: 10px 0 0 5px;
+        border: 1px solid #d5d5d5;
+        border-radius: 5px;
 
-
+        &:focus {
+            background-color: #d5d5d5;
+        }
     }
 
     &__message {
-
+        font-size: 16px;
+        line-height: 20px;
+        font-family: $ffp;
     }
 
     &__messages {
         flex: 1 1 80%;
         padding: 15px;
-        background: rgb(226,226,226);
-        background: linear-gradient(110deg, rgba(226,226,226,1) 11%, rgba(232,230,230,1) 49%, rgba(227,192,205,1) 89%);
-
+        background-color: #e6e7fc;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
 }
 
-.person{
+.person {
     &__avatar {
         width: 50px;
         height: 50px;
-
         margin-right: 10px;
 
         img {
@@ -76,15 +84,54 @@
 
 .messages {
 
-    &__container{
+    &__form {
+        max-width: 250px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__container{}
+
+    &__create{}
+
+    &__text{
+        border: 1px solid rgb(182, 182, 182);
+        border-radius: 5px;
+        width: 250px;
+        padding: 10px 5px;
+        font-family: $ffn;
+    }
+
+    &__send{
+        padding: 8px 12px;
+        align-self: end;
+        cursor: pointer;
+        color: #eee;
+        background-color:#1a8cff;
+        font-family: $ffr;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 767px) {
+    .messages {
+        &__form {
+            max-width: 200px;
+
+        }
+        &__text {
+            max-width: 200px;
+        }
 
     }
 
-    &__create{
-
+    .person {
+        &__avatar {
+            width: 45px;
+            height: 45px;
+        }
+        &__name {
+            display: none;
+        }
     }
-
-    &__text{}
-
-    &__send{}
 }
