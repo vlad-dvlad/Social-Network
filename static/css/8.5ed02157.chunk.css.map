@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/settings/settings.module.scss"],"names":[],"mappings":"AAAA,0BACE,UAAW,CACX,YAAa,CACb,qCACE,qBAAsB","file":"8.5ed02157.chunk.css","sourcesContent":[".settings {\r\n  width: 100%;\r\n  flex: 1 1 85%;\r\n  &__container {\r\n    background-color: #fff;\r\n  }\r\n}"]}
