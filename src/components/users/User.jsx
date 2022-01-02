@@ -4,7 +4,7 @@ import userPhoto from "../../assets/img/cat.png";
 import {NavLink} from "react-router-dom";
 import classNames from "classnames";
 
-const User = ({user, followingInProgress, followUsers, unFollowUsers}) => {
+const User = ({user, status, followingInProgress, followUsers, unFollowUsers}) => {
 
     const followUser = (id) => {
         followUsers(id);
@@ -37,13 +37,13 @@ const User = ({user, followingInProgress, followUsers, unFollowUsers}) => {
             </div>
             <div className={styles.user__info}>
                 <div className={styles.user__name}>
-                    {user.name}
+                    {user.name }
                 </div>
                 <div className={styles.user__location}>
                     {"u.location.country"}, {"u.location.city"}
                 </div>
                 <div className={styles.user__status}>
-                    {user.status}
+                    {status || "------"}
                 </div>
             </div>
         </div>);
