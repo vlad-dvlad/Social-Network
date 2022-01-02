@@ -7,7 +7,7 @@ const ControlForms = ({meta:{touched, error}, children}) => {
     const hasErrors = touched && error;
     return (
         <div className={errorsStyles.validation__container}>
-            <div className={classNames( {[errorsStyles.validation__field]: hasErrors} )}>
+            <div className={classNames( errorsStyles.validation__f,{[errorsStyles.validation__field]: hasErrors} )}>
                 { children }
             </div>
             <div className={errorsStyles.validation__message}>

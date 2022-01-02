@@ -6,7 +6,7 @@
   }
 
   &__field {
-    width: 100%;
+    max-width: 100%;
     border-radius: 5px;
     border: 2px red solid;
     margin-bottom: 10px;
@@ -22,5 +22,10 @@
     color: #af2721;
     border: 2px red solid;
     padding: 5px;
+  }
+
+  &__f {
+    display: flex;
+    max-width: 450px;
   }
 }

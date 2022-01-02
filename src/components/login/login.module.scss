@@ -23,14 +23,21 @@ $ffn: 'Nunito', sans-serif;
   }
 }
 
+
+
 .form {
-  &__container {}
+
+  &__container {
+
+  }
 
   &__email {
+    max-width: 450px;
     margin-bottom: 15px;
   }
 
   &__password {
+    max-width: 450px;
     margin-bottom: 15px;
   }
 
@@ -39,9 +46,7 @@ $ffn: 'Nunito', sans-serif;
     font-family: $ffp;
   }
 
-  &__checkbox_style {
-
-  }
+  &__checkbox_style {}
 
   &__btn {
     text-transform: uppercase;
@@ -67,7 +72,7 @@ $ffn: 'Nunito', sans-serif;
 
   &__style {
     font-family: $ffp;
-    width: 450px;
+    flex: 0 1 100%;
     height: 40px;
     background-color: #eee;
     border-radius: 5px;
