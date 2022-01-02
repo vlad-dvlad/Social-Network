@@ -38,7 +38,7 @@ const CreatePost = ({posts, imgUrl}) => {
 const MyPostsForm = ({handleSubmit}) => {
     return (
         <form onSubmit={handleSubmit} className={styles.posts__form}>
-            {createField("Enter something", "newPost", [required, maxLength50],
+            {createField("Enter something", "newPost", [maxLength50],
                 Textarea, {}, "text", [styles.posts__text])}
             <button className={styles.posts__btn}>Add post</button>
         </form>
