@@ -43,7 +43,7 @@ const Dialogs = ({dialogs, messages, send}) => {
 const DialogsForm = ({handleSubmit}) => {
     return (
         <form className={styles.messages__form} onSubmit={handleSubmit}>
-            {createField("Type your message", "newMessage", [],
+            {createField("Type your message", "newMessage", [maxLength100],
                 Textarea, {}, "text", [styles.messages__text])}
             <button className={styles.messages__send}>Send</button>
         </form>
