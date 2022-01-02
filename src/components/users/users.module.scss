@@ -44,9 +44,7 @@
       height: 100%;
       border-radius: 50%;
       border: 2px solid #abd6ff;;
-
     }
-
     margin-bottom: 10px;
   }
 
@@ -70,27 +68,17 @@
     justify-content: space-between;
   }
 
-  &__name{
-
-  }
-  &__location{
-
-  }
-
-  &__status{
-
-  }
+  &__name{}
+  &__location{}
+  &__status{}
 }
 
 .page {
 
-  &__container {
-
-  }
+  &__container {}
 
   &__selected {
     font-weight: 700;
-
   }
 
   &__btn {

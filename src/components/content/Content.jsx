@@ -23,7 +23,6 @@ const Content = () => {
                     <NavbarContainer />
                 </div>
                 <div className={classNames(styles.main__content, "col-lg-10", "col-12", "p-0")}>
-                    <Route path="/" render={() => <Redirect to={"/profile"}/>}/>
                     <Route path="/profile/:userId?" render={WithSuspense(ProfileContainer)}/>
                     <Route path="/dialogs" render={WithSuspense(DialogsContainer)}/>
                     <Route path="/news" render={WithSuspense(News)}/>

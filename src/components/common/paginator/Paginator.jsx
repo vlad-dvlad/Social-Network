@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styles from "../../users/users.module.scss";
 import classNames from "classnames";
 
-const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
+const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 5}) => {
     let pageCount = Math.ceil(totalItemsCount / pageSize);
 
     let pages = [];
@@ -28,7 +28,7 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, porti
                 return <span className={ classNames({[styles.page__selected]: currentPage === p})}
                              onClick={() => {
                                  onPageChanged(p)
-                             }} key={p}><span className={styles.page__item}>{p}</span></span>;
+                             }} key={p}><span className={classNames(styles.page__item, {[styles.page__itemsel]: currentPage === p})}>{p}</span></span>;
             })
             }
             {
