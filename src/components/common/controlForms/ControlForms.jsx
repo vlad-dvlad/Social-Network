@@ -21,8 +21,6 @@ const ControlForms = ({meta:{touched, error}, children}) => {
 export const Input = (props) => {
     const {input, meta, child, styles, ...restProps} = props;
 
-    //`${loginStyles.form__style}`
-
     return (
         <ControlForms {...props}>
                 <input className={classNames(styles)}

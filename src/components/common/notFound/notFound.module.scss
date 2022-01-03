@@ -1,0 +1,21 @@
+$ffn: 'Nunito', sans-serif;
+
+.error {
+  &__container {
+    padding: 15px;
+  }
+  &__title {
+    font-family: $ffn;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    font-family: $ffn;
+    font-size: 20px;
+    line-height: 25px;
+
+
+  }
+}

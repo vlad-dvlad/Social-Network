@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './content.module.scss'
-import {Redirect, Route} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
 import {WithSuspense} from "../../hoc/WithSuspense";
 import NavbarContainer from "../navbar/NavbarContainer";
 import classNames from "classnames";
+import NotFound from "../common/notFound/NotFound";
 
 const DialogsContainer = React.lazy(() => import('../dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import('../profile/ProfileContainer'));
@@ -12,8 +13,7 @@ const Login = React.lazy(() => import('../login/Login'));
 const News = React.lazy(() => import('../news/News'));
 const Settings = React.lazy( () => import('../settings/Settings'));
 const Music = React.lazy( () => import ('../music/Music'));
-
-
+/*const NotFound = React.lazy(() => import('../common/notFound/NotFound'));*/
 
 const Content = () => {
     return (
@@ -23,13 +23,18 @@ const Content = () => {
                     <NavbarContainer />
                 </div>
                 <div className={classNames(styles.main__content, "col-lg-10", "col-12", "p-0")}>
-                    <Route path="/profile/:userId?" render={WithSuspense(ProfileContainer)}/>
-                    <Route path="/dialogs" render={WithSuspense(DialogsContainer)}/>
-                    <Route path="/news" render={WithSuspense(News)}/>
-                    <Route path="/music" render={WithSuspense(Music)}/>
-                    <Route path="/users" render={WithSuspense(UsersContainer)}/>
-                    <Route path="/login" render={WithSuspense(Login)}/>
-                    <Route path="/settings" render={WithSuspense(Settings)}/>
+                    <Switch>
+                        <Route path="/profile/:userId?" render={WithSuspense(ProfileContainer)}/>
+                        <Route path="/dialogs" render={WithSuspense(DialogsContainer)}/>
+                        <Route path="/news" render={WithSuspense(News)}/>
+                        <Route path="/music" render={WithSuspense(Music)}/>
+                        <Route path="/users" render={WithSuspense(UsersContainer)}/>
+                        <Route path="/login" render={WithSuspense(Login)}/>
+                        <Route path="/settings" render={WithSuspense(Settings)}/>
+                        <Route component={NotFound}/>
+
+                        <Redirect from={"/"} to={"/profile"} />
+                    </Switch>
                 </div>
 
             </div>
