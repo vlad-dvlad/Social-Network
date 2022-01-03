@@ -27,9 +27,7 @@ $ffn: 'Nunito', sans-serif;
 
 .form {
 
-  &__container {
-
-  }
+  &__container {}
 
   &__email {
     max-width: 450px;
@@ -69,7 +67,6 @@ $ffn: 'Nunito', sans-serif;
     }
   }
 
-
   &__style {
     font-family: $ffp;
     flex: 0 1 100%;
@@ -78,7 +75,6 @@ $ffn: 'Nunito', sans-serif;
     border-radius: 5px;
     padding-left: 5px;
   }
-
 }
 
 @media (max-width: 767px) {
