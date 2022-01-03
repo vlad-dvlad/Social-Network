@@ -10,7 +10,9 @@ const Profile = ({profile, status, isOwner, updateStatus, savePhoto, saveProfile
             <div className={classes.profile__container}>
                 <ProfileInfo profile={profile} status={status} isOwner={isOwner}
                              updateStatus={updateStatus} savePhoto={savePhoto} saveProfile={saveProfile}/>
-                <MyPostsContainer />
+                {
+                    isOwner && <MyPostsContainer />
+                }
             </div>
         </div>
     );

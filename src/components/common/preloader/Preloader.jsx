@@ -1,11 +1,11 @@
 import loader from "../../../assets/img/loader.gif";
-import classes from './common.module.scss';
+import styles from './common.module.scss';
 import React from "react";
 
-const Preloader = (props) => {
+const Preloader = () => {
     return(
         <div>
-            <img src={loader} className={classes.users__loader}/>
+            <img src={loader} className={styles.common__loader}/>
         </div>
     )
 }

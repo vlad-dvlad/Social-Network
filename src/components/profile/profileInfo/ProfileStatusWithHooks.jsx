@@ -19,7 +19,6 @@ const ProfileStatusWithHooks  = (props) => {
 
     const onStatusChange = (e) => setStatus(e.currentTarget.value);
 
-
     return (
         <div className={styles.data__status}>
             {
@@ -35,7 +34,6 @@ const ProfileStatusWithHooks  = (props) => {
                     value={status}/>
                 </div>
             }
-
         </div>
     );
 

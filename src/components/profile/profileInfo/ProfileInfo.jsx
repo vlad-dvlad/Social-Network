@@ -41,7 +41,7 @@ const ProfileInfo = ({profile, status, isOwner, updateStatus, savePhoto, savePro
                 </div>
                 <div className={classNames(styles.profile__data, styles.data)}>
                     <span className={styles.data__name}>{profile.fullName}</span>
-                    <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
+                    <ProfileStatusWithHooks status={status} updateStatus={updateStatus} isOwner={isOwner}/>
                     {editMode ?
                         <ProfileDataReduxForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
                         : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={() => {setEditMode(true)}} />}
