@@ -1,0 +1,2 @@
+(this["webpackJsonpsocial-network"]=this["webpackJsonpsocial-network"]||[]).push([[7],{305:function(n,c,s){},309:function(n,c,s){"use strict";s.r(c);s(0);var t=s(305),e=s.n(t),a=s(1);c.default=function(){return Object(a.jsx)("div",{className:"".concat(e.a.news," ").concat(e.a.news__container),children:"News"})}}}]);
+//# sourceMappingURL=7.773bb791.chunk.js.map

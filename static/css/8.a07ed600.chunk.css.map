@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/settings/settings.module.scss"],"names":[],"mappings":"AACE,qCACE,qBAAsB","file":"8.a07ed600.chunk.css","sourcesContent":[".settings {\r\n  &__container {\r\n    background-color: #fff;\r\n  }\r\n}"]}
