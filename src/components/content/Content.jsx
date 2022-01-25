@@ -31,9 +31,9 @@ const Content = () => {
                         <Route path="/users" render={WithSuspense(UsersContainer)}/>
                         <Route path="/login" render={WithSuspense(Login)}/>
                         <Route path="/settings" render={WithSuspense(Settings)}/>
-                        <Route component={NotFound}/>
-
                         <Redirect from={"/"} to={"/profile"} />
+
+                        <Route component={NotFound}/>
                     </Switch>
                 </div>
 
